@@ -1,0 +1,90 @@
+.headerFaq {
+    text-align: center;
+}
+.headerFaq h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #322fff;
+    margin-top: 50px;
+    letter-spacing: 1px;
+
+}
+.headerFaq p {
+    margin-bottom: 100px;
+    color: #626262;
+    font-size: 15px;
+}
+
+.faqImg img{
+    width: 70%;
+    height: 420px;
+    margin-top: -50px;
+    margin-left: 70px;
+    justify-content: center;
+}
+.rowFaq {
+    margin-bottom: 150px;
+}
+
+.containerFaq {
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+}
+.accordion {
+    width: 90%;
+    max-width: 540px;
+    margin: 18px auto;
+    color: white;
+}
+.accordionFaq {
+    margin: 5px 0;
+}
+.accordionHeading {
+    background: linear-gradient(90deg, rgba(45,38,153,1) 0%, rgba(40,40,171,1) 34%, rgba(0,212,255,1) 100%);
+    border: 3px solid #F9851C;
+    border-radius: 5px;
+}
+.accordionHeading .containerFaq {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.accordionHeading span {
+    cursor: pointer;
+}
+.accordionHeading h3 {
+    font-size: 17px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+
+.accordionContent h4 {
+    padding: 35px 25px 5px 25px;
+    font-size: 15px;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-underline-offset: 0.5em;
+}
+.accordionContent p {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 15px 25px 30px 25px;
+}
+.icons {
+    font-size: 21px;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+.content {
+    background: #407BFF;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+.content.show {
+    height: auto;
+    max-height: 9999px;
+}
