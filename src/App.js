@@ -2,14 +2,16 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Faq from "./Pages/Faq/Faq";
 import Footer from "./Components/Footer/Footer"
+import LandingPage from "./Pages/LandingPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Footer />}>
-          </Route>
+          <Route path="/" element={<Footer />} />
+          <Route path="/landing-page" element={<><LandingPage/></>} />
         </Routes>
       </BrowserRouter>
     </>
