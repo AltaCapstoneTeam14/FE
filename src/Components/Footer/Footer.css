@@ -1,0 +1,33 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(40,40,171,1) 84%, rgba(45,38,153,1) 100%);
+    height: 250px;
+}
+.contentFooter {
+    margin: 40px;
+    color: white;
+}
+.contentFooter h6 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.contentFooter h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.contentFooter p {
+    font-size: 14px;
+}
+.logo-footer {
+    font-size: 25px;
+    font-weight: 700;
+}
+.socialMedia img{
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    cursor: pointer;
+}
