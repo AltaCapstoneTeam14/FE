@@ -1,0 +1,109 @@
+
+.tagline {
+    margin-top: 7rem !important;
+}
+
+.button {
+    border-radius: 30px !important;
+    background-color: #605CFF !important;
+    padding: 0.6rem  !important;
+}
+
+.aboutUs {
+    margin-top: 8rem !important;
+}
+
+.iconDot {
+    margin-right: 0.7rem !important;
+}
+
+.card {
+    max-width: 274px;
+    height: 270px !important;
+    text-align: center !important;
+    margin: 3rem;
+    margin-left: 8rem;
+    box-shadow: 10px 10px 20px 0 #00000067;
+    
+    
+}
+
+.columnLoyaltyPoint {
+    margin-left: 5rem;
+}
+
+.teksLoyaltyPoint {
+    color: #7C7C7C;
+}
+
+.box {
+    background-image: linear-gradient(to right, #407BFF, #1D1C4B);
+    width: 1153.44px;
+    height: 161.55px;
+    border-radius: 24.87px;
+    display: flex;
+}
+
+.news {
+    margin-left: 4rem;
+    margin-top: 2rem;
+    width: 107px;
+    height: 107px;
+}
+
+.newsletter {
+    color: white;
+    font-weight: bold;
+    font-size: 25.85px;
+    margin-top: 4rem;
+    margin-left: 4rem;
+}
+
+.form {
+    background-color: white;
+    width: 500.49px;
+    height: 74.62px;
+    border-radius: 107.7px;
+    margin-top: 3rem;
+    margin-left: 3rem;
+  
+}
+
+.inputEmail {
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    border: none;
+}
+
+.inputEmail:focus {
+    outline: none;
+}
+
+.subscribeButton {
+    background-color: #407BFF;
+    border: none;
+    font-size: 19px;
+    color: white;
+    font-weight: bolder;
+    width: 170px;
+    height: 62px;
+    border-radius: 30px;
+    margin-top: -2.7rem;
+    margin-left: 20.3rem;
+    padding-top: 1rem;
+    padding-left: 1.3rem;
+    display: flex;
+}
+
+.arrowSubs {
+    background-color: white;
+    color: #407BFF;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    width: 43px;
+    height: 43px;
+    margin-left: 0.7rem;
+    margin-top: -0.4rem;
+    padding-top: 0.25rem;
+}
