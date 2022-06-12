@@ -1,30 +1,24 @@
-<<<<<<< HEAD
-import LandingPage from "./Pages/LandingPage";
-
-function App() {
-  return (
-    <div className="App">
-      
-      <LandingPage />
-    </div>
-=======
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import Faq from "./Pages/Faq/Faq";
+import Faq from "./Pages/Faq/Faq";
 import Footer from "./Components/Footer/Footer"
+import LandingPage from "./Pages/LandingPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Assets/style/main.css';
+import Login from "./Pages/Login/Login";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Footer />}>
-          </Route>
+          <Route path="/" element={<Footer />} />
+          <Route path="/login" element={<><Login/></>} />
+          <Route path="/landing-page" element={<><LandingPage/></>} />
+          <Route path="/faq" element={<><Faq/></>} />
         </Routes>
       </BrowserRouter>
     </>
->>>>>>> 29676ada7d06872d6170f2eab38a10b8a6ba7daa
   );
 }
 
