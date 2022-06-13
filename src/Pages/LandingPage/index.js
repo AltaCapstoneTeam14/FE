@@ -26,6 +26,7 @@ import { GoPrimitiveDot } from "react-icons/go";
 import { BsChevronRight } from "react-icons/bs";
 import { BsChevronDown } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
+import Footer from "../../Components/Footer/Footer";
 
 
 
@@ -279,7 +280,9 @@ function LandingPage() {
           </div>
         </Container>
       </div>
+      
     </div>
+    
   );
 }
 
