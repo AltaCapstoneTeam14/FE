@@ -19,6 +19,7 @@ function App() {
           <Route path="/login" element={<><Login/></>} />
           <Route path="/landing-page" element={<><LandingPage/></>} />
           <Route path="/faq" element={<><Faq/></>} />
+
         </Routes>
       </BrowserRouter>
     </>
