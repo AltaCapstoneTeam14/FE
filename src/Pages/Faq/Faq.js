@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "../Faq/Faq.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Navbar } from "react-bootstrap";
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import { BsFillArrowDownSquareFill } from "react-icons/bs";
-
 import FaqImg from "../../Images/FaqImg.png";
 
 function Faq() {
@@ -50,6 +49,7 @@ function Faq() {
   
   return (
     <>
+      
       <div className="headerFaq">
         <h1 className="faq">FAQ</h1>
         <p>
