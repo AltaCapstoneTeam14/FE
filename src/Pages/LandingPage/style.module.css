@@ -7,6 +7,8 @@
     border-radius: 30px !important;
     background-color: #605CFF !important;
     padding: 0.6rem  !important;
+    margin-left: 30px;
+    margin-top: 20px;
 }
 
 .aboutUs {
@@ -42,6 +44,7 @@
     height: 161.55px;
     border-radius: 24.87px;
     display: flex;
+    margin-bottom: 70px;
 }
 
 .news {
@@ -106,4 +109,48 @@
     margin-left: 0.7rem;
     margin-top: -0.4rem;
     padding-top: 0.25rem;
+}
+.imageLanding img {
+    width: 200px;
+    height: 200px;
+}
+.imageLanding img{
+    width: 400px;
+    height: 400px;
+    margin-left: 50px;
+}
+.imageLanding2 img {
+    width: 480px;
+    height: 400px;
+    margin-top: -50px;
+}
+.imageLanding3 img {
+    width: 550px;
+    height: 550px;
+    margin-top: -100px;
+}
+.titleLanding {
+    margin-left: 30px;
+    margin-top: -20px;
+}
+.paragraphLanding {
+    margin-top: 20px;
+    font-size: 15px;
+    color: gray;
+    width: 450px;
+}
+.paragraphLanding2 {
+    margin-top: 20px;
+    font-size: 15px;
+    color: gray;
+    width: 450px;
+}
+.paragraphTitle {
+    margin-top: 20px;
+    font-size: 15px;
+    color: gray;
+}
+.titleLanding2 {
+    margin-left: 30px;
+    margin-top: -100px;
 }

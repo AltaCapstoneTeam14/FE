@@ -8,6 +8,7 @@ import {
   Card,
   CardGroup,
 } from "react-bootstrap";
+
 // images
 import image1 from "../../Assets/Images/images-1.png";
 import image2 from "../../Assets/Images/image-2.png";
@@ -23,8 +24,8 @@ import { GoPrimitiveDot } from "react-icons/go";
 import { BsChevronRight } from "react-icons/bs";
 import { BsChevronDown } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
-import Footer from "../../Components/Footer/Footer";
-
+// components
+import Footer from "../../Components/Footer/Footer"
 
 
 
@@ -37,22 +38,28 @@ function LandingPage() {
         <Container>
           <Row>
             <Col>
+              <div className={style.titleLanding}>
               <h1 className={style.tagline}>
                 Start a Loyalty <br /> Program,{" "}
                 <span style={{ color: "#605CFF" }}>Rewards</span>
                 <br /> Your Business!
               </h1>
+              <div className={style.paragraphTitle}>
               <p>
                 Our loyalty solutions is ideal for many types of business <br />{" "}
                 and easy to use for you and your customers.
               </p>
+              </div>
+              </div>
               <Button className={style.button}>
                 Learn more <BsChevronRight />
               </Button>
             </Col>
 
             <Col>
+              <div className={style.imageLanding}>
               <img src={image1} />
+              </div>
             </Col>
           </Row>
         </Container>
@@ -61,7 +68,9 @@ function LandingPage() {
         <Container className={style.aboutUs}>
           <Row>
             <Col>
+              <div className={style.imageLanding2}>
               <img src={image2} />
+              </div>
             </Col>
 
             <Col>
@@ -79,12 +88,14 @@ function LandingPage() {
                 Upgrade your customer <br /> retention strategy with <br />{" "}
                 Bishapay loyalty solutions
               </h2>
+              <div className={style.paragraphLanding}>
               <p>
                 Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et.
                 Sunt qui esse pariatur duis deserunt mollit dolore cillum minim
                 tempor enim. Elit aute irure tempor cupidatat incididunt sint
                 deserunt ut voluptate aute id deserunt nisi.
               </p>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -93,6 +104,7 @@ function LandingPage() {
         <Container className={style.aboutUs}>
           <Row>
             <Col style={{ marginTop: "7rem" }}>
+              <div className={style.titleLanding2}>
               <p
                 style={{
                   color: "#C4C4C4",
@@ -106,16 +118,21 @@ function LandingPage() {
               <h2>
                 Industry Leading Loyalty <br /> Solutions Made Easy
               </h2>
+              <div className={style.paragraphLanding2}>
               <p>
                 Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et.
                 Sunt qui esse pariatur duis deserunt mollit dolore cillum minim
                 tempor enim. Elit aute irure tempor cupidatat incididunt sint
                 deserunt ut voluptate aute id deserunt nisi.
               </p>
+              </div>
+              </div>
             </Col>
 
             <Col>
+              <div className={style.imageLanding3}>
               <img src={image3} />
+              </div>
             </Col>
           </Row>
         </Container>
@@ -128,7 +145,7 @@ function LandingPage() {
             style={{
               textAlign: "center",
               color: "#605CFF",
-              marginBottom: "5rem",
+              marginTop: "70px",
             }}
           >
             OUR PRODUCTS
@@ -248,12 +265,12 @@ function LandingPage() {
                   <BsArrowRight />
                 </div>
                 </button>
-
             </div>
           </div>
         </Container>
       </div>
-      
+
+      {/* <Footer /> */}
     </div>
     
   );
