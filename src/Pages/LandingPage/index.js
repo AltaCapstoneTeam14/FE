@@ -1,16 +1,14 @@
 import React from "react";
 import style from "./style.module.css";
 import {
-  Navbar,
   Container,
-  NavDropdown,
-  Nav,
   Button,
   Row,
   Col,
   Card,
   CardGroup,
 } from "react-bootstrap";
+
 // images
 import image1 from "../../Assets/Images/images-1.png";
 import image2 from "../../Assets/Images/image-2.png";
@@ -35,52 +33,33 @@ function LandingPage() {
   return (
     <div>
       <div>
-        <Navbar bg="light" expand="lg">
-          <Container>
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
-                    Something
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Separated link
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-
+        
         {/* HERO SECTION */}
         <Container>
           <Row>
             <Col>
+              <div className={style.titleLanding}>
               <h1 className={style.tagline}>
                 Start a Loyalty <br /> Program,{" "}
                 <span style={{ color: "#605CFF" }}>Rewards</span>
                 <br /> Your Business!
               </h1>
+              <div className={style.paragraphTitle}>
               <p>
                 Our loyalty solutions is ideal for many types of business <br />{" "}
                 and easy to use for you and your customers.
               </p>
+              </div>
+              </div>
               <Button className={style.button}>
                 Learn more <BsChevronRight />
               </Button>
             </Col>
 
             <Col>
+              <div className={style.imageLanding}>
               <img src={image1} />
+              </div>
             </Col>
           </Row>
         </Container>
@@ -89,7 +68,9 @@ function LandingPage() {
         <Container className={style.aboutUs}>
           <Row>
             <Col>
+              <div className={style.imageLanding2}>
               <img src={image2} />
+              </div>
             </Col>
 
             <Col>
@@ -107,12 +88,14 @@ function LandingPage() {
                 Upgrade your customer <br /> retention strategy with <br />{" "}
                 Bishapay loyalty solutions
               </h2>
+              <div className={style.paragraphLanding}>
               <p>
                 Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et.
                 Sunt qui esse pariatur duis deserunt mollit dolore cillum minim
                 tempor enim. Elit aute irure tempor cupidatat incididunt sint
                 deserunt ut voluptate aute id deserunt nisi.
               </p>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -121,6 +104,7 @@ function LandingPage() {
         <Container className={style.aboutUs}>
           <Row>
             <Col style={{ marginTop: "7rem" }}>
+              <div className={style.titleLanding2}>
               <p
                 style={{
                   color: "#C4C4C4",
@@ -134,16 +118,21 @@ function LandingPage() {
               <h2>
                 Industry Leading Loyalty <br /> Solutions Made Easy
               </h2>
+              <div className={style.paragraphLanding2}>
               <p>
                 Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et.
                 Sunt qui esse pariatur duis deserunt mollit dolore cillum minim
                 tempor enim. Elit aute irure tempor cupidatat incididunt sint
                 deserunt ut voluptate aute id deserunt nisi.
               </p>
+              </div>
+              </div>
             </Col>
 
             <Col>
+              <div className={style.imageLanding3}>
               <img src={image3} />
+              </div>
             </Col>
           </Row>
         </Container>
@@ -156,7 +145,7 @@ function LandingPage() {
             style={{
               textAlign: "center",
               color: "#605CFF",
-              marginBottom: "5rem",
+              marginTop: "70px",
             }}
           >
             OUR PRODUCTS
@@ -276,7 +265,6 @@ function LandingPage() {
                   <BsArrowRight />
                 </div>
                 </button>
-
             </div>
           </div>
         </Container>
@@ -284,6 +272,7 @@ function LandingPage() {
 
       {/* <Footer /> */}
     </div>
+    
   );
 }
 
