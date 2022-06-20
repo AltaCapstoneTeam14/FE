@@ -11,8 +11,9 @@ import p360 from '../../Images/360.svg'
 
 function AboutUs() {
     return (
+        
         <div className='bodyAbout'>
-            
+            <Navbar/>
             <div className='title'>
             <h1>About Us</h1>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>

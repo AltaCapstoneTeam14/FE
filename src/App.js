@@ -4,8 +4,11 @@ import EditUser from "./Components/User/EditUser"
 import ShowUser from "./Components/User/ShowUser"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Assets/style/main.css';
+import Navbar from "./Components/Navbar/Navbar";
+import LandingPage from './Pages/LandingPage/index'
 import Login from "./Pages/Login/Login";
 import AboutUs from './Pages/AboutUs/AboutUs'
+import Faq from "./Pages/Faq/Faq";
 
 
 
@@ -21,7 +24,7 @@ function App() {
           <Route path="/aboutus" element={<><AboutUs/></>} />
           <Route path="/faq" element={<><Faq/></>} />
 
-          <Route path='/' element={<ShowUser />}></Route>
+          <Route path='/user' element={<ShowUser />}></Route>
           <Route path='edit/:id' element={<EditUser />}></Route>
 
         </Routes>
