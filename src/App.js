@@ -7,6 +7,7 @@ import LandingPage from "./Pages/LandingPage";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Assets/style/main.css';
 import Login from "./Pages/Login/Login";
+import AboutUs from './Pages/AboutUs/AboutUs'
 
 
 function App() {
@@ -15,9 +16,9 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Footer />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<><Login/></>} />
-          <Route path="/landing-page" element={<><LandingPage/></>} />
+          <Route path="/aboutus" element={<><AboutUs/></>} />
           <Route path="/faq" element={<><Faq/></>} />
 
         </Routes>

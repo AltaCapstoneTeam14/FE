@@ -5,6 +5,7 @@ import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import { BsFillArrowDownSquareFill } from "react-icons/bs";
 import FaqImg from "../../Images/FaqImg.png";
 
+
 function Faq() {
   const [selected, setSelected] = useState(null);
   const toggle = (i) => {
