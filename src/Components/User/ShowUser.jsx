@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { getUsers, userSelectors } from "../../features/userSlice"
+import { getUsers, userSelectors, deleteUsers } from "../../features/userSlice"
 import { Button, Table } from 'react-bootstrap';
 import "./ShowUser.css"
 
@@ -34,7 +34,7 @@ const ShowUser = () => {
                   <td>{user.username}</td>
                   <td>
                     <Button variant="primary mx-3">Edit</Button>
-                    <Button variant="danger">Delete</Button>
+                    <Button onClick={()=> dispatch(deleteUsers(user.id))} variant="danger">Delete</Button>
                   </td>
                 </tr>
               ))
