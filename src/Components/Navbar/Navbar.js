@@ -1,21 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import { useNavigate } from 'react-router-dom'
 
 function Navbar() {
+    const navigate = useNavigate();
+    const navigateToLogin = () =>{
+        navigate('/login')
+    }
   return (
+        <>
         <NavbarContainer>
-            <Logo>Bishapay</Logo>
+            <Logo href='/'>Bishapay</Logo>
             <Menu>
-                <MenuLink>Home</MenuLink>
-                <MenuLink>About Us</MenuLink>
-                <MenuLink>Product</MenuLink>
-                <MenuLink>FAQ</MenuLink>
+                <MenuLink href='/'>Home</MenuLink>
+                <MenuLink href='aboutUs'>About Us</MenuLink>
+                <MenuLink href='product'>Product</MenuLink>
+                <MenuLink href='faq'>FAQ</MenuLink>
             </Menu>
-            <LoginButton>Log In</LoginButton>
+            <LoginButton type='button' onClick={navigateToLogin}>Log In</LoginButton>
         </NavbarContainer>
+
+       
+
+        </>
   )
 }
+
+
+
 
 const NavbarContainer = styled.nav`
     width:1200px;
