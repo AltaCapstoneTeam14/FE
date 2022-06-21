@@ -1,32 +1,22 @@
 import React from "react";
 import style from "./style.module.css";
-import {
-  Container,
-  Button,
-  Row,
-  Col,
-  Card,
-  CardGroup,
-} from "react-bootstrap";
+import { Container, Button, Row, Col, Card, CardGroup,} from "react-bootstrap";
 
 // images
-import image1 from "../../Assets/Images/images-1.png";
-import image2 from "../../Assets/Images/image-2.png";
-import image3 from "../../Assets/Images/image-3.png";
-import wallet from "../../Assets/Images/Crypto Wallet.svg";
-import coins from "../../Assets/Images/Coins three.svg";
-import walletCard from "../../Assets/Images/Wallet Cards.svg";
-import computer from "../../Assets/Images/computer.png";
-import purpleShadow from "../../Assets/Images/Ellipse 12.png";
-import news from "../../Assets/Images/news 1.png"
+import image1 from "../../Images/images-1.png";
+import image2 from "../../Images/image-2.png";
+import image3 from "../../Images/image-3.png";
+import wallet from "../../Images/Crypto Wallet.svg";
+import coins from "../../Images/Coins three.svg";
+import walletCard from "../../Images/Wallet Cards.svg";
+import computer from "../../Images/computer.png";
+import purpleShadow from "../../Images/Ellipse 12.png";
+import news from "../../Images/news 1.png"
 // icons
 import { GoPrimitiveDot } from "react-icons/go";
 import { BsChevronRight } from "react-icons/bs";
 import { BsChevronDown } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
-// components
-import Footer from "../../Components/Footer/Footer"
-
 
 
 function LandingPage() {
@@ -269,8 +259,6 @@ function LandingPage() {
           </div>
         </Container>
       </div>
-
-      {/* <Footer /> */}
     </div>
     
   );
