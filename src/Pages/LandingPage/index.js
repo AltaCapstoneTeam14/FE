@@ -18,12 +18,15 @@ import { BsChevronRight } from "react-icons/bs";
 import { BsChevronDown } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
 
+// components
+import Footer from "../../Components/Footer/Footer"
+import Navbar from "../../Components/Navbar/Navbar";
 
 function LandingPage() {
   return (
     <div>
       <div>
-        
+        <Navbar/>
         {/* HERO SECTION */}
         <Container>
           <Row>

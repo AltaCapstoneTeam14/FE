@@ -6,6 +6,14 @@ export const getUsers = createAsyncThunk("users/getUsers", async() => {
     return response.data;
 });
 
+export const updateUsers = createAsyncThunk("users/updateUsers", async ({ id, name, username }) => {
+  const response = await axios.patch(`https://jsonplaceholder.typicode.com/users/${id}`,{
+    name,
+    username
+  });
+  return response.data;
+});
+
 
 export const deleteUsers = createAsyncThunk("users/deleteUsers", async (id) => {
     await fetch("https://jsonplaceholder.typicode.com/users/$(Id)", {
@@ -38,6 +46,9 @@ const userSlice = createSlice({
       state.loading = false;
       createEntityAdapter.removeOne(state, id)
     },
+    [updateUsers.fulfilled]: (state, action) => {
+      userEntity.updateOne(state, { id: action.payload.id, update: action.payload});
+    }
   },
 });
 
