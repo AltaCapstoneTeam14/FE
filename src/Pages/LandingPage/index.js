@@ -48,7 +48,7 @@ function LandingPage() {
 
             <Col>
               <div className={style.imageLanding}>
-              <img src={image1} />
+              <img src={image1} alt="image1"/>
               </div>
             </Col>
           </Row>
@@ -59,7 +59,7 @@ function LandingPage() {
           <Row>
             <Col>
               <div className={style.imageLanding2}>
-              <img src={image2} />
+              <img src={image2} alt="image2" />
               </div>
             </Col>
 
@@ -102,7 +102,7 @@ function LandingPage() {
 
             <Col>
               <div className={style.imageLanding3}>
-              <img src={image3} />
+              <img src={image3} alt="image3"/>
               </div>
             </Col>
           </Row>
@@ -175,7 +175,7 @@ function LandingPage() {
             <Col>
               <img
                 src={computer}
-                style={{ zIndex: "2", position: "relative" }}
+                style={{ zIndex: "2", position: "relative" }} alt="computer"
               />
               <img
                 src={purpleShadow}
@@ -185,6 +185,7 @@ function LandingPage() {
                   marginTop: "-15rem",
                   marginLeft: "-40rem",
                 }}
+                alt="purpleShadow"
               />
             </Col>
 
@@ -206,7 +207,7 @@ function LandingPage() {
           </div>
 
           <div className={style.box}>
-            <img src={news}/>
+            <img src={news} alt="news"/>
             <p>Subcribe to our Newsletter</p>
 
             <div className={style.form}>

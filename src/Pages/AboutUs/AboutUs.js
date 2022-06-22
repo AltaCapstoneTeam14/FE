@@ -24,14 +24,14 @@ function AboutUs() {
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
                 <div className='colTeam'>
                     <div className='ourTeam'>
-                        <img src={rocket}></img>
+                        <img src={rocket} alt="rocket"></img>
                         <div>
                             <h2>Lorem Ipsum</h2>
                             <p>Lorem Ipsum is simply dummy text the printing and typesetting industry.</p>
                         </div>
                     </div>
                     <div className='ourTeams'>
-                        <img src={idea}></img>
+                        <img src={idea} alt="idea"></img>
                         <div>
                             <h2>Lorem Ipsum</h2>
                             <p>Lorem Ipsum is simply dummy text the printing and typesetting industry.</p>
@@ -40,7 +40,7 @@ function AboutUs() {
                 </div>
                 </div>
                 <div className='imageYoung'>
-                <img src={young}></img>
+                <img src={young} alt="young"></img>
                 </div>
             </div>
             <div className='btnOurTeam'>
@@ -51,19 +51,19 @@ function AboutUs() {
             </div>
             <div className='ourValues'>
                 <div className='side'>
-                    <img src={bussiness} className='busy'/>
+                    <img src={bussiness} alt="bussiness" className='busy'/>
                 </div>
                 <div >
                     <div className='values'>
-                        <img src={rocket}></img>
+                        <img src={rocket} alt="rocket2"></img>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                     </div>
                     <div className='values'>
-                        <img src={idea}></img>
+                        <img src={idea} alt="idea2"></img>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                     </div>
                     <div className='values'>
-                        <img src={p360}></img>
+                        <img src={p360} alt="p360"></img>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                     </div>
                 </div>

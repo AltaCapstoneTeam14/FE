@@ -16,9 +16,9 @@ function Footer() {
             <h3>Bishapay </h3>
             <p>Bishapay is a thinking company on a mission to connect people and businesses with meaningful innovation. </p>
             <div className="socialMedia">
-              <img src={twitter}></img>
-              <img src={facebook}></img>
-              <img src={instagram}></img>
+              <img src={twitter} alt="twitter"></img>
+              <img src={facebook} alt="facebook"></img>
+              <img src={instagram} alt="instagram"></img>
             </div>
           </Col>
           <Col className="contentFooter">
