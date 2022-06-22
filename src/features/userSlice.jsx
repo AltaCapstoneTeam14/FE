@@ -6,7 +6,7 @@ export const getUsers = createAsyncThunk("users/getUsers", async() => {
     return response.data;
 });
 
-export const updateUsers = createAsyncThunk("users/updateUsers", async ({ id, name, username }) => {
+export const updateUser = createAsyncThunk("users/updateUser", async ({ id, name, username }) => {
   const response = await axios.patch(`https://jsonplaceholder.typicode.com/users/${id}`,{
     name,
     username
@@ -14,9 +14,8 @@ export const updateUsers = createAsyncThunk("users/updateUsers", async ({ id, na
   return response.data;
 });
 
-
-export const deleteUsers = createAsyncThunk("users/deleteUsers", async (id) => {
-    await axios.delete('https://jsonplaceholder.typicode.com/users/${Id}') ;
+export const deleteUser = createAsyncThunk("users/deleteUser", async (id) => {
+    await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`) ;
     return id;
 
 });
@@ -26,7 +25,6 @@ const userEntity = createEntityAdapter({
 })
 
 
-
 const userSlice = createSlice({
   name: "user",
   initialState: userEntity.getInitialState(),
@@ -34,11 +32,10 @@ const userSlice = createSlice({
     [getUsers.fulfilled]: (state, action) => {
       userEntity.setAll(state, action.payload);
     },
-    [deleteUsers.fulfilled](state, action) {
-      
-      userEntity.removeOne(state, action.payload)
+    [deleteUser.fulfilled]: (state, action) => {
+      userEntity.removeOne(state, action.payload);
     },
-    [updateUsers.fulfilled]: (state, action) => {
+    [updateUser.fulfilled]: (state, action) => {
       userEntity.updateOne(state, { id: action.payload.id, update: action.payload});
     }
   },

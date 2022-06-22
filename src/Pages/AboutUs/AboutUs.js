@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import Footer from "../../Components/Footer/Footer"
 import Navbar from '../../Components/Navbar/Navbar'
 import '../AboutUs/AboutUs.css'
 import rocket from '../../Images/Group.svg'
@@ -11,8 +11,8 @@ import p360 from '../../Images/360.svg'
 
 function AboutUs() {
     return (
-        
-        <div className='bodyAbout'>
+        <div>
+            <div className='bodyAbout'>
             <Navbar/>
             <div className='title'>
             <h1>About Us</h1>
@@ -24,14 +24,14 @@ function AboutUs() {
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
                 <div className='colTeam'>
                     <div className='ourTeam'>
-                        <img src={rocket} style={{height: "120px", width:"120px"}}></img>
+                        <img src={rocket}></img>
                         <div>
                             <h2>Lorem Ipsum</h2>
                             <p>Lorem Ipsum is simply dummy text the printing and typesetting industry.</p>
                         </div>
                     </div>
-                    <div className='ourTeam'>
-                        <img src={idea} style={{height: "120px", width:"120px"}}></img>
+                    <div className='ourTeams'>
+                        <img src={idea}></img>
                         <div>
                             <h2>Lorem Ipsum</h2>
                             <p>Lorem Ipsum is simply dummy text the printing and typesetting industry.</p>
@@ -39,11 +39,16 @@ function AboutUs() {
                     </div>
                 </div>
                 </div>
-                
+                <div className='imageYoung'>
                 <img src={young}></img>
+                </div>
             </div>
+            <div className='btnOurTeam'>
             <button>Our Team </button>
-            <h2 style={{ margin: "60px 0"}}>Our Values</h2>
+            </div>
+            <div className='ourValue'>
+            <h2>Our Values</h2>
+            </div>
             <div className='ourValues'>
                 <div className='side'>
                     <img src={bussiness} className='busy'/>
@@ -64,7 +69,8 @@ function AboutUs() {
                 </div>
             </div>
         </div>
-        
+        <Footer></Footer>
+        </div>
 
     )
 }
