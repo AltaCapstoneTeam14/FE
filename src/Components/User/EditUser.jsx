@@ -25,13 +25,12 @@ const EditUser = () => {
   useEffect(() => {
     if(user){
       setName(user.name);
-      setUserName(user.username);
-    }
+      setUserName(user.username);}
   },[user]);
 
-  const handleUpdate = async (e) => {
+  const handleUpdate = (e) => {
     e.preventDefault();
-    await dispatch(updateUser({id, name, username}));
+    dispatch(updateUser({id, name, username}));
     navigate('/user');
   }
 
@@ -40,6 +39,8 @@ const EditUser = () => {
       
       <Card className="cardEdit">
       <Card.Body>
+        <h3>Edit Data</h3>
+        <hr></hr>
         <Form onSubmit={handleUpdate}>
         <div className="inputEdit">
           <label>Name</label>
@@ -66,6 +67,7 @@ const EditUser = () => {
           </div>
         </div>
         <div className="inputEdit">
+          <br></br>
           <Button variant="success" type="submit">Update</Button>
         </div>
       </Form>

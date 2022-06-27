@@ -30,13 +30,15 @@ const userSlice = createSlice({
   initialState: userEntity.getInitialState(),
   extraReducers: {
     [getUsers.fulfilled]: (state, action) => {
-      userEntity.setAll(state, action.payload);
+      userEntity.setAll(state, action.payload); 
+      console.log(action)
     },
     [deleteUser.fulfilled]: (state, action) => {
       userEntity.removeOne(state, action.payload);
     },
     [updateUser.fulfilled]: (state, action) => {
-      userEntity.updateOne(state, { id: action.payload.id, update: action.payload});
+      userEntity.updateOne(state, { id: action.payload.id, updates: action.payload});
+      console.log (state)
     }
   },
 });
