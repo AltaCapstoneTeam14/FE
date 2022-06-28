@@ -1,0 +1,41 @@
+
+.left{
+    background: #605CFF;
+    height: 100vh;
+}
+.right{
+    height: 100vh;
+}
+.login{
+    width: 80%;
+}
+.login-image{
+    width: 80%;
+}
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #7B8389;
+    opacity: 10; /* Firefox */
+}
+.form-control { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    height: 50px;
+}
+.form-control{
+    background: #ECF2F7;
+}
+.forgot{
+    color: #66BCE8;
+}
+.login-btn{
+    background: #605CFF;
+    color: white;
+}
+.visible{
+    left: 93%;
+}
+.button-hide{
+    border: none;
+    margin-top: 13px;
+    background: transparent;
+    padding: 0px;
+    color: black;
+}
