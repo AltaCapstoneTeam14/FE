@@ -6,7 +6,7 @@ export const getUsers = createAsyncThunk("users/getUsers", async() => {
     return response.data;
 });
 
-export const updateUsers = createAsyncThunk("users/updateUsers", async ({ id, name, username }) => {
+export const updateUser = createAsyncThunk("users/updateUser", async ({ id, name, username }) => {
   const response = await axios.patch(`https://jsonplaceholder.typicode.com/users/${id}`,{
     name,
     username
@@ -14,11 +14,8 @@ export const updateUsers = createAsyncThunk("users/updateUsers", async ({ id, na
   return response.data;
 });
 
-
-export const deleteUsers = createAsyncThunk("users/deleteUsers", async (id) => {
-    await fetch("https://jsonplaceholder.typicode.com/users/$(Id)", {
-        method: 'DELETE',
-    })
+export const deleteUser = createAsyncThunk("users/deleteUser", async (id) => {
+    await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`) ;
     return id;
 
 });
@@ -28,26 +25,20 @@ const userEntity = createEntityAdapter({
 })
 
 
-
 const userSlice = createSlice({
   name: "user",
   initialState: userEntity.getInitialState(),
   extraReducers: {
     [getUsers.fulfilled]: (state, action) => {
-      userEntity.setAll(state, action.payload);
+      userEntity.setAll(state, action.payload); 
+      console.log(action)
     },
-    [deleteUsers.rejected](state) {
-      state.loading = false;
+    [deleteUser.fulfilled]: (state, action) => {
+      userEntity.removeOne(state, action.payload);
     },
-    [deleteUsers.pending](state) {
-      state.loading = true;
-    },
-    [deleteUsers.fulfilled](state, { payload: id }) {
-      state.loading = false;
-      createEntityAdapter.removeOne(state, id)
-    },
-    [updateUsers.fulfilled]: (state, action) => {
-      userEntity.updateOne(state, { id: action.payload.id, update: action.payload});
+    [updateUser.fulfilled]: (state, action) => {
+      userEntity.updateOne(state, { id: action.payload.id, updates: action.payload});
+      console.log (state)
     }
   },
 });

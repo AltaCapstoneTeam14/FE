@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { getUsers, userSelectors } from "../../features/userSlice"
+import { getUsers, userSelectors, deleteUser } from "../../features/userSlice"
 import { Link } from 'react-router-dom';
 import { Button, Table } from 'react-bootstrap';
 import "./ShowUser.css"
@@ -34,8 +34,8 @@ const ShowUser = () => {
                   <td>{user.name}</td>
                   <td>{user.username}</td>
                   <td>
-                    <Link to={`edit/${user.id}`} ><Button variant="primary mx-3">Edit</Button></Link>
-                    <Button variant="danger">Delete</Button>
+                    <Link to={`edit/${user.id}`}><Button variant="primary mx-3">Edit</Button></Link>
+                    <Button onClick={() => dispatch(deleteUser(user.id))} variant="danger">Delete</Button>
                   </td>
                 </tr>
               ))
