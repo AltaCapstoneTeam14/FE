@@ -21,7 +21,8 @@ function Login() {
 
   const [Login, setLogin] = useState(dataLogin)
 
-  const [msg, setMsg] = useState('')
+  const [msg, setMsg] = useState()
+  const [error, setError] = useState([])
   const navigate = useNavigate();
 
   const Auth = async () => {
@@ -31,20 +32,38 @@ function Login() {
           navigate("/");
           window.location.reload();
         }, (error) => {
-          console.log(error);
+          error.response.data.errors.map((e) => {
+            setError( arr => [...arr, e])
+          })
+          console.log(error.response.data.errors);
+          
+          
         }
       )
     }catch (err) {
-      console.log(err)
+      console.log(err.response)
   }
+  
   }
+
   const handleChange = (e) => {
     const value = e.target.value;
     setLogin({...Login, [e.target.name] : value})
   }
 
-  useEffect (() => {
-  })
+  const handleKeyPress = (e) => {
+    if(e.key === "Enter"){
+       Auth()
+    }
+}
+
+  useEffect(() => {
+    const user = authService.getCurrentUser();
+    if (user) {
+      navigate("/")
+    }
+  }, []);
+
   return (
     <>
     <div className='container-fluid'>
@@ -71,7 +90,21 @@ function Login() {
               <img src={handsHello} alt='login4' style={{width : '36px'}} className='mb-3'/>
               <span className='fs-3 fw-bold mb-4'>Welcome Back!</span>
               <span>please login to access your account.</span>
+              {
+                error.length !== 0 && 
+                <div className='mt-4'>
+                {error.map((e, i) =>
+                    <li className='text-danger'>
+                      <span key={i} className='text-danger'>{e}</span>
+                    </li>
+                    
+                  )}
+                </div>
+                  
+              }
             </div>
+
+            <Form onKeyDown={handleKeyPress}>
             <div className='d-flex flex-column'>
               <div className='d-flex flex-row justify-content-between align-items-center'>
                 <Form.Label >E-mail or phone number</Form.Label>
@@ -95,6 +128,7 @@ function Login() {
 
               <button type='button' className='login-btn btn' onClick={Auth}><span className='fs-5'>Log In</span></button>
             </div>
+            </Form>
           </div>
         </div>
       </div>
