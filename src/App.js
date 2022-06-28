@@ -5,7 +5,7 @@ import ShowUser from "./Components/User/ShowUser"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LandingPage from './Pages/LandingPage/index'
 import Login from "./Pages/Login/Login";
-import AboutUs from './Pages/AboutUs/AboutUs'
+import AboutUs from './Pages/AboutUs/AboutUs';
 import Faq from "./Pages/Faq/Faq";
 
 function App() {

@@ -37,7 +37,9 @@ const userSlice = createSlice({
       userEntity.removeOne(state, action.payload);
     },
     [updateUser.fulfilled]: (state, action) => {
-      userEntity.updateOne(state, { id: action.payload.id, updates: action.payload});
+      userEntity.updateOne(state, { 
+        id: action.payload.id, 
+        changes: action.payload});
       console.log (state)
     }
   },
