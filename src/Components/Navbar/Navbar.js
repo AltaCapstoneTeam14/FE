@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
+import authService from '../../Services/auth-services';
 
 function Navbar() {
     const navigate = useNavigate();
     const navigateToLogin = () =>{
         navigate('/login')
     }
+
+    const [currentUser, setCurrentUser] = useState(undefined);
+
+    const logOut = () => {
+        authService.logout();
+        window.location.reload();
+      };
+
+  useEffect(() => {
+    const user = authService.getCurrentUser();
+
+    if (user) {
+      setCurrentUser(user);
+    }
+  }, []);
+
   return (
         <>
         <NavbarContainer>
@@ -17,7 +34,14 @@ function Navbar() {
                 <MenuLink href='product'>Product</MenuLink>
                 <MenuLink href='faq'>FAQ</MenuLink>
             </Menu>
-            <LoginButton type='button' onClick={navigateToLogin}>Log In</LoginButton>
+            {
+                currentUser ? (
+                    <LoginButton type='button' onClick={logOut}>Log Out</LoginButton>
+                ) : (
+                    <LoginButton type='button' onClick={navigateToLogin}>Log In</LoginButton>
+                )
+            }
+            
         </NavbarContainer>
 
        

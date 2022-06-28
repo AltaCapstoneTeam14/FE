@@ -16,7 +16,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <div className='container'>
         <Routes>
 
           <Route path="/" element={<LandingPage />} />
@@ -28,7 +27,6 @@ function App() {
           <Route path='/user/edit/:id' element={<EditUser />}></Route>
 
         </Routes>
-      </div>
     </BrowserRouter>
     </>
   );
