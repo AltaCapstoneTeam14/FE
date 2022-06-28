@@ -12,7 +12,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <div>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<><Login/></>} />
@@ -22,7 +21,6 @@ function App() {
           <Route path='/user' element={<ShowUser />}></Route>
           <Route path='/user/edit/:id' element={<EditUser />}></Route>
         </Routes>
-      </div>
     </BrowserRouter>
     </>
   );

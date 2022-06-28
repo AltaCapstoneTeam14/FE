@@ -6,14 +6,50 @@ import loginImage3 from '../../Images/login-image-3.svg'
 import handsHello from '../../Images/hands-hello.svg'
 import {AiOutlineInfoCircle, AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
 import { Carousel, Form } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import axios from 'axios'
+import authService from '../../Services/auth-services'
 
 function Login() {
 
   const [hidePassword, setHidePassword] = useState(true)
+  const dataLogin = {
+    email : "" ,
+    password : ""
+  }
 
+  const [Login, setLogin] = useState(dataLogin)
+
+  const [msg, setMsg] = useState('')
+  const navigate = useNavigate();
+
+  const Auth = async () => {
+    try{
+      await authService.login(Login.email,Login.password).then(
+        () => {
+          navigate("/");
+          window.location.reload();
+        }, (error) => {
+          console.log(error);
+        }
+      )
+    }catch (err) {
+      console.log(err)
+  }
+  }
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setLogin({...Login, [e.target.name] : value})
+  }
+
+  useEffect (() => {
+  })
   return (
     <>
+    <div className='container-fluid'>
+
+    </div>
       <div className='d-flex flex-row w-100'>
         <div className='left w-100 d-flex align-items-center justify-content-center'>
           <Carousel className='login-image' controls={false} indicators={false} fade={false} interval={2000}>
@@ -41,7 +77,7 @@ function Login() {
                 <Form.Label >E-mail or phone number</Form.Label>
                 <AiOutlineInfoCircle size='16px'/>
               </div>
-              <Form.Control type="text" placeholder='Type your e-mail or phone number' className='border-0 mb-4'/>
+              <Form.Control type="text" placeholder='Type your e-mail or phone number' className='border-0 mb-4' name = "email" value={Login.email} onChange={handleChange}/>
 
               <Form.Label >Password</Form.Label>
               
@@ -52,12 +88,12 @@ function Login() {
                   </button>
                   
                 </li>
-                <Form.Control type={hidePassword? "password" : "text"} placeholder='Type your password' className='border-0 mb-2'/>
+                <Form.Control type={hidePassword? "password" : "text"} placeholder='Type your password' className='border-0 mb-2' name='password' value={Login.password} onChange={handleChange} />
               </div>
               
               <Link to='#' className='text-decoration-none mb-4'><span className='forgot'>Forgot password?</span></Link>
 
-              <button type='button' className='login-btn btn'><span className='fs-5'>Log In</span></button>
+              <button type='button' className='login-btn btn' onClick={Auth}><span className='fs-5'>Log In</span></button>
             </div>
           </div>
         </div>
