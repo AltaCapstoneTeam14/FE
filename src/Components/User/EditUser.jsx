@@ -31,7 +31,7 @@ const EditUser = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
     dispatch(updateUser({id, name, username}));
-    navigate('/user');
+    navigate('/CustomerData');
   }
 
   return (

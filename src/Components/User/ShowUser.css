@@ -1,5 +1,36 @@
 .showUser {
-    width: 80% !important;
+    width: 90%;
     margin: auto;
     margin-top: 100px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+table {
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgb(210, 210, 210);
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+thead {
+    box-shadow: 0 5px 10px rgb(210, 210, 210);
+}
+th {
+    padding: 16px 32px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 900;
+}
+td {
+    padding: 16px 35px;
+}
+tr:nth-child(even){
+    background-color: rgb(238, 238, 238);
+}
+.btnDelete {
+    margin-left: 10px;
 }
