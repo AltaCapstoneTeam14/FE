@@ -18,20 +18,20 @@ const ShowUser = () => {
   return (
     <div>
       <div className='showUser'>
-        <table striped bordered hover>
+        <table>
           <thead>
             <tr>
-              <th>No</th>
+              <th className="thNo">No</th>
               <th>Name</th>
               <th>Username</th>
-              <th>actions</th>
+              <th className="thAct">actions</th>
             </tr>
           </thead>
           <tbody>
             {
               users.map((user, index) => (
                 <tr key={user.id}>
-                  <td>{index + 1}</td>
+                  <td className="tdnumber">{index + 1}</td>
                   <td>{user.name}</td>
                   <td>{user.username}</td>
                   <td>

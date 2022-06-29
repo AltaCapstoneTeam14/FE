@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import style from "./style.module.css";
 import { Container, Button, Row, Col, Card, CardGroup,} from "react-bootstrap";
 
@@ -20,7 +20,6 @@ import { BsChevronDown } from "react-icons/bs";
 // components
 import Footer from "../../Components/Footer/Footer"
 import Navbar from "../../Components/Navbar/Navbar";
-import postService from "../../Services/post-services";
 
 function LandingPage() {
   
