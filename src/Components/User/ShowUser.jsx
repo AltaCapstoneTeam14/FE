@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap';
 import "./ShowUser.css"
 import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import NavAdmin from '../Navbar/NavAdmin'
 
 const ShowUser = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,8 @@ const ShowUser = () => {
 
   return (
     <div>
+      <div>
+      <NavAdmin/>
       <div className='showUser'>
         <table striped bordered hover>
           <thead>
@@ -43,6 +46,7 @@ const ShowUser = () => {
             }
           </tbody>
         </table>
+      </div>
       </div>
     </div>
   )
