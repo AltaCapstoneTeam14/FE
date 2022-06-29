@@ -4,7 +4,7 @@
     padding: 0;
 }
 .bodyAbout{
-    width: 1200px;
+    width: 100%;
     margin: auto;
 }
 .title{
@@ -38,7 +38,7 @@
 
 .solutions{
     display: flex;
-    width: 1200px;
+    width: 90%;
     margin: auto;
     margin-top: 40px;
 }
@@ -65,6 +65,7 @@
 .ourTeam{
     display: flex;
     margin: 7% 0 ;
+    width: 88%;
     
 }
 .ourTeam img{
@@ -89,6 +90,8 @@
     display: flex;
     margin: 7% 0 ;
     margin-left: -100px;
+    width: 90%;
+    margin: auto;
     
 }
 .ourTeams img{
@@ -157,7 +160,12 @@ button{
     margin-top: 90px;
 }
 .btnOurTeam {
-    margin-left: 40px;
+    margin-left: 100px;
+    
+}
+.btnOurTeam button{
+    border-style: none;
+    border:none;
 }
 .ourValue h2 {
     font-weight: 600;
