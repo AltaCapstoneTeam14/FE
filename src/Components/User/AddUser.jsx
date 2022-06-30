@@ -1,47 +1,31 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getTopUps, topUpSelectors, updateTopUp } from "../../features/userSlice";
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { saveTopUp } from "../../features/userSlice";
+import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Form } from "react-bootstrap";
-import "./EditUser.css"
-//Untuk dapat memanggil data dari store, dapat menggunakan useSelector
+import "./AddUser.css"
 
-
-const EditUser = () => {
+const AddUser = () => {
   const [amount, setAmount] = useState('');
   const [gross_amount, setGross_amount] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { id } = useParams();
 
-  const topup = useSelector((state) => topUpSelectors.selectById(state, id));
-
-  useEffect(() => {
-    dispatch(getTopUps());
-  },[dispatch]);
-
-  useEffect(() => {
-    if(topup){
-      setAmount(topup.amount);
-      setGross_amount(topup.gross_amount);}
-  },[topup]);
-
-  const handleUpdate = (e) => {
+  const createTopUp = (e) => {
     e.preventDefault();
-    dispatch(updateTopUp({id, amount, gross_amount}));
+    dispatch(saveTopUp({ amount, gross_amount}));
     navigate('/CustomerData');
   }
 
   return (
     <div>
-      
       <Card className="cardEdit">
       <Card.Body>
         <h3>Edit Data</h3>
         <hr></hr>
-        <Form onSubmit={handleUpdate}>
+        <Form onSubmit={createTopUp}>
         <div className="inputEdit">
           <label>Amount</label>
           <div>
@@ -50,7 +34,7 @@ const EditUser = () => {
             className="input" 
             placeholder="Amount" 
             value={amount} 
-            onChange={(e) => {setAmount(e.target.value);}}
+            onChange={(e) => setAmount(e.target.value)}
             />
           </div>
         </div>
@@ -68,7 +52,7 @@ const EditUser = () => {
         </div>
         <div className="inputEdit">
           <br></br>
-          <Button variant="success" type="submit">Update</Button>
+          <Button variant="success" type="submit">Submit</Button>
         </div>
       </Form>
       </Card.Body>
@@ -78,4 +62,4 @@ const EditUser = () => {
   );
 };
 
-export default EditUser;
+export default AddUser;

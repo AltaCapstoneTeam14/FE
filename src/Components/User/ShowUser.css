@@ -1,7 +1,7 @@
 .showUser {
     width: 90%;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 20px;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -46,10 +46,25 @@ tr:nth-child(even){
 .titleTop {
     display: flex;
     justify-content: center;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 .titleTop h2 {
     font-weight: 700;
     color: blue;
     letter-spacing: 3px;
+}
+.btnadd Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnTop {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 460px;
+    font-size: 10px;
+}
+.btnTop Button {
+    font-size: 15px;
 }

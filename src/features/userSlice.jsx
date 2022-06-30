@@ -7,16 +7,24 @@ export const getTopUps = createAsyncThunk("topUps/getTopUps", async() => {
     return response.data.data;
 });
 
-export const updateTopUp = createAsyncThunk("topUps/updateTopUp", async ({ id, data: {amount, gross_amount} }) => {
-  const response = await axios.post(`http://44.201.153.46:8081/api-dev/v1/products/topup/${id}`,{
-    amount,
-    gross_amount
-  });
+export const saveTopUp = createAsyncThunk("topUps/saveTopUp", async ({ amount, gross_amount }) => {
+  const response = await axios.post('http://44.201.153.46:8081/api-dev/v1/products/topup', {
+      amount,
+      gross_amount
+  },{ headers: authHeader() });
   return response.data.data;
 });
 
+export const updateTopUp = createAsyncThunk("topUps/updateTopUp", async ({ id, amount, gross_amount }) => {
+  const response = await axios.patch(`http://44.201.153.46:8081/api-dev/v1/products/topup/${id}`, {
+    amount, 
+    gross_amount
+  },{ headers: authHeader() });
+  return response.data;
+});
+
 export const deleteTopUp = createAsyncThunk("topUps/deleteTopUp", async (id) => {
-    await axios.delete(`http://44.201.153.46:8081/api-dev/v1/products/topup/${id}`) ;
+    await axios.delete(`http://44.201.153.46:8081/api-dev/v1/products/topup/${id}` , { headers: authHeader()}) ;
     return id;
 
 });
@@ -26,12 +34,16 @@ const topUpEntity = createEntityAdapter({
 })
 
 
+
 const topUpSlice = createSlice({
   name: "topup",
   initialState: topUpEntity.getInitialState(),
   extraReducers: {
     [getTopUps.fulfilled]: (state, action) => {
       topUpEntity.setAll(state, action.payload); 
+    },
+    [saveTopUp.fulfilled]: (state, action) => {
+      topUpEntity.addOne(state, action.payload);
     },
     [deleteTopUp.fulfilled]: (state, action) => {
       topUpEntity.removeOne(state, action.payload);

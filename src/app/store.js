@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "../features/userSlice";
+import topUpReducer from "../features/userSlice";
 
 export const store = configureStore({
     reducer: {
-        topup: userReducer
+        topup: topUpReducer
     },
 });

@@ -26,6 +26,9 @@ const ShowUser = () => {
       <div className='titleTop'>
         <h2>Top Up Product</h2>
       </div>
+      <div className='btnTop'>
+      <Link to="add"><Button variant="success">Add New</Button></Link>
+      </div>
       <div className='showUser'>
         <table>
           <thead>
