@@ -1,52 +1,57 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { getUsers, userSelectors, deleteUser } from "../../features/userSlice"
+import { getTopUps, topUpSelectors, deleteTopUp } from "../../features/userSlice"
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import "./ShowUser.css"
 import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin5Fill } from "react-icons/ri";
-import NavAdmin from '../Navbar/NavAdmin'
+// import NavAdmin from '../Navbar/NavAdmin'
 
 const ShowUser = () => {
   const dispatch = useDispatch();
-  const users = useSelector(userSelectors.selectAll);
+  
+  const topup = useSelector(topUpSelectors.selectAll);
 
   useEffect(() => {
-    dispatch(getUsers())
-  }, [dispatch])
+    dispatch(getTopUps())
+    console.log(getTopUps)
+  }, [dispatch]) 
 
   return (
     <div>
       <div>
-      <NavAdmin/>
+      {/* <NavAdmin/> */}
+      </div>
+      <div className='titleTop'>
+        <h2>Top Up Product</h2>
+      </div>
       <div className='showUser'>
         <table>
           <thead>
             <tr>
               <th className="thNo">No</th>
-              <th>Name</th>
-              <th>Username</th>
+              <th>Amount</th>
+              <th>Groos Amount</th>
               <th className="thAct">actions</th>
             </tr>
           </thead>
           <tbody>
             {
-              users.map((user, index) => (
-                <tr key={user.id}>
+              topup.map((item, index) => (
+                <tr key={item.id}>
                   <td className="tdnumber">{index + 1}</td>
-                  <td>{user.name}</td>
-                  <td>{user.username}</td>
+                  <td>{item.data.amount}</td>
+                  <td>{item.data.gross_amount}</td>
                   <td>
-                    <Link to={`edit/${user.id}`}><Button variant="success" className='px-2 py-1'><AiFillEdit></AiFillEdit></Button></Link>
-                    <Button onClick={() => dispatch(deleteUser(user.id))} variant="danger" className='px-2 py-1 ms-2'><RiDeleteBin5Fill></RiDeleteBin5Fill></Button>
+                    <Link to={`edit/${item.id}`}><Button variant="primary" className='px-2 py-1'><AiFillEdit></AiFillEdit></Button></Link>
+                    <Button onClick={() => dispatch(deleteTopUp(item.id))} variant="danger" className='px-2 py-1 ms-2'><RiDeleteBin5Fill></RiDeleteBin5Fill></Button>
                   </td>
                 </tr>
               ))
             }
           </tbody>
         </table>
-      </div>
       </div>
     </div>
   )

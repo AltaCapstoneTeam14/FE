@@ -99,19 +99,5 @@ const MenuLink = styled.a`
         color: #407BFF;
     }
 `
-const LoginButton = styled.button`
-    padding:10px 30px;
-    border-radius:20px;
-    background: #605CFF;
-    border: none;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: 3px 20px 20px -11px rgba(117,166,146,0.78);
-    -webkit-box-shadow: 3px 26px 33px -11px rgba(117,166,146,0.78);
-    -moz-box-shadow: 3px 26px 33px -11px rgba(117,166,146,0.78);
-`
-
-
 
 export default NavAdmin

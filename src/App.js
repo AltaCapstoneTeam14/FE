@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import EditUser from "./Components/User/EditUser"
+// import EditUser from "./Components/User/EditUser"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LandingPage from './Pages/LandingPage/index'
 import Login from "./Pages/Login/Login";
@@ -20,7 +20,7 @@ function App() {
           <Route path="/faq" element={<><Faq/></>} />
 
           <Route path='/CustomerData' element={<CustomerData />}></Route>
-          <Route path='/CustomerData/edit/:id' element={<EditUser />}></Route>
+          {/* <Route path='/CustomerData/edit/:id' element={<EditUser />}></Route> */}
         </Routes>
     </BrowserRouter>
     </>

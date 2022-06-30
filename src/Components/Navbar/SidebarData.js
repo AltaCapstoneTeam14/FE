@@ -1,7 +1,7 @@
 import React from 'react'
 import * as BsIcons from 'react-icons/bs'
 import * as AiIcons from 'react-icons/ai'
-import * as GrIcons from 'react-icons/gr'
+// import * as GrIcons from 'react-icons/gr'
 import * as FaIcons from 'react-icons/fa'
 
 
