@@ -1,12 +1,13 @@
 import React from "react";
+import './App.css'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import EditUser from "./Components/User/EditUser"
-import ShowUser from "./Components/User/ShowUser"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LandingPage from './Pages/LandingPage/index'
 import Login from "./Pages/Login/Login";
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Faq from "./Pages/Faq/Faq";
+import CustomerData from "./Pages/CustomerData/CustomerData";
 
 function App() {
   return (
@@ -18,8 +19,8 @@ function App() {
           <Route path="/aboutus" element={<><AboutUs/></>} />
           <Route path="/faq" element={<><Faq/></>} />
 
-          <Route path='/user' element={<ShowUser />}></Route>
-          <Route path='/user/edit/:id' element={<EditUser />}></Route>
+          <Route path='/CustomerData' element={<CustomerData />}></Route>
+          <Route path='/CustomerData/edit/:id' element={<EditUser />}></Route>
         </Routes>
     </BrowserRouter>
     </>

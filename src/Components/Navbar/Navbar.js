@@ -59,7 +59,7 @@ function Navbar() {
 
 
 const NavbarContainer = styled.nav`
-    width:1200px;
+    width:88%;
     height:100px;
     margin: auto;
     align-items: center;
@@ -95,7 +95,11 @@ const MenuLink = styled.a`
     cursor: pointer;
     padding: 20px;
     margin: 0 20px;
+    color: #000000;
 
+    &:hover{
+        color:#407BFF;
+    }
     &:active {
         color: #407BFF;
     }
