@@ -29,7 +29,7 @@ function Login() {
     try{
       await authService.login(Login.email,Login.password).then(
         () => {
-          navigate("/");
+          navigate("/user");
           window.location.reload();
         }, (error) => {
           error.response.data.errors.map((e) => {
