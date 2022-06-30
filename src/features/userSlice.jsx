@@ -4,15 +4,15 @@ import authHeader from "../Services/auth-header";
 
 export const getTopUps = createAsyncThunk("topUps/getTopUps", async() => {
     const response = await axios.get('http://44.201.153.46:8081/api-dev/v1/products/topup', { headers: authHeader() });
-    return response.data;
+    return response.data.data;
 });
 
 export const updateTopUp = createAsyncThunk("topUps/updateTopUp", async ({ id, data: {amount, gross_amount} }) => {
-  const response = await axios.patch(`http://44.201.153.46:8081/api-dev/v1/products/topup/${id}`,{
+  const response = await axios.post(`http://44.201.153.46:8081/api-dev/v1/products/topup/${id}`,{
     amount,
     gross_amount
   });
-  return response.data;
+  return response.data.data;
 });
 
 export const deleteTopUp = createAsyncThunk("topUps/deleteTopUp", async (id) => {
