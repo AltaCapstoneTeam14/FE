@@ -27,7 +27,7 @@ function Login() {
     try{
       await authService.login(Login.email,Login.password).then(
         () => {
-          navigate("/customerData");
+          navigate("/TopUpPage");
           window.location.reload();
         }, (error) => {
           error.response.data.errors.map((e) => {

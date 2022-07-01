@@ -1,4 +1,4 @@
-.showUser {
+.ShowTopUp {
     width: 90%;
     margin: auto;
     margin-top: 20px;
@@ -58,11 +58,11 @@ tr:nth-child(even){
     justify-content: center;
     align-items: center;
 }
-.btnTop {
+.btnPulsa {
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    margin-left: 460px;
+    margin-left: 1050px;
     font-size: 10px;
 }
 .btnTop Button {
