@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "../features/userSlice";
+import topUpReducer from "../features/TopUpSlice";
+import pulsaReducer from "../features/PulsaSlice";
+import quotaReducer from "../features/QuotaSlice";
 
 export const store = configureStore({
     reducer: {
-        user: userReducer
+        topup: topUpReducer,
+        pulsa: pulsaReducer,
+        quota: quotaReducer,
     },
 });

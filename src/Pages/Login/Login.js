@@ -6,9 +6,8 @@ import loginImage3 from '../../Images/login-image-3.svg'
 import handsHello from '../../Images/hands-hello.svg'
 import {AiOutlineInfoCircle, AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
 import { Carousel, Form } from 'react-bootstrap'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import axios from 'axios'
 import authService from '../../Services/auth-services'
 
 function Login() {
@@ -21,7 +20,6 @@ function Login() {
 
   const [Login, setLogin] = useState(dataLogin)
 
-  const [msg, setMsg] = useState()
   const [error, setError] = useState([])
   const navigate = useNavigate();
 
@@ -29,7 +27,7 @@ function Login() {
     try{
       await authService.login(Login.email,Login.password).then(
         () => {
-          navigate("/");
+          navigate("/TopUpPage");
           window.location.reload();
         }, (error) => {
           error.response.data.errors.map((e) => {
