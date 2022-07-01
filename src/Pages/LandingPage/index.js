@@ -16,13 +16,13 @@ import news from "../../Images/news 1.png"
 import { GoPrimitiveDot } from "react-icons/go";
 import { BsChevronRight } from "react-icons/bs";
 import { BsChevronDown } from "react-icons/bs";
-import { BsArrowRight } from "react-icons/bs";
 
 // components
 import Footer from "../../Components/Footer/Footer"
 import Navbar from "../../Components/Navbar/Navbar";
 
 function LandingPage() {
+  
   return (
     <div>
       <div>
@@ -33,9 +33,7 @@ function LandingPage() {
             <Col>
               <div className={style.titleLanding}>
               <h1 className={style.tagline}>
-                Start a Loyalty <br /> Program,{" "}
-                <span style={{ color: "#605CFF" }}>Rewards</span>
-                <br /> Your Business!
+                Start a Loyalty Program, <span>Rewards</span> Your Business!
               </h1>
               <div className={style.paragraphTitle}>
               <p>
@@ -51,7 +49,7 @@ function LandingPage() {
 
             <Col>
               <div className={style.imageLanding}>
-              <img src={image1} />
+              <img src={image1} alt="image1"/>
               </div>
             </Col>
           </Row>
@@ -62,24 +60,14 @@ function LandingPage() {
           <Row>
             <Col>
               <div className={style.imageLanding2}>
-              <img src={image2} />
+              <img src={image2} alt="image2" />
               </div>
             </Col>
 
             <Col>
-              <p
-                style={{
-                  color: "#C4C4C4",
-                  fontSize: "14px",
-                  fontWeight: "bold",
-                }}
-              >
-                <GoPrimitiveDot className={style.iconDot} />
-                WHO WE ARE{" "}
-              </p>
-              <h2>
-                Upgrade your customer <br /> retention strategy with <br />{" "}
-                Bishapay loyalty solutions
+              <p className={style.landingSection2}> <GoPrimitiveDot className={style.iconDot} /> WHO WE ARE </p>
+              <h2 className={style.landingHeader2}>
+                Upgrade your customer retention strategy with Bishapay loyalty solutions
               </h2>
               <div className={style.paragraphLanding}>
               <p>
@@ -98,18 +86,9 @@ function LandingPage() {
           <Row>
             <Col style={{ marginTop: "7rem" }}>
               <div className={style.titleLanding2}>
-              <p
-                style={{
-                  color: "#C4C4C4",
-                  fontSize: "14px",
-                  fontWeight: "bold",
-                }}
-              >
-                <GoPrimitiveDot className={style.iconDot} />
-                WHAT WE DO
-              </p>
-              <h2>
-                Industry Leading Loyalty <br /> Solutions Made Easy
+              <p className={style.landingSection2}> <GoPrimitiveDot className={style.iconDot} /> WHO WE ARE </p>
+              <h2 className={style.landingHeader3}>
+                Industry Leading Loyalty Solutions Made Easy
               </h2>
               <div className={style.paragraphLanding2}>
               <p>
@@ -124,25 +103,15 @@ function LandingPage() {
 
             <Col>
               <div className={style.imageLanding3}>
-              <img src={image3} />
+              <img src={image3} alt="image3"/>
               </div>
             </Col>
           </Row>
         </Container>
 
         {/* OUR PRODUCT SECTION */}
-        <Container
-          style={{ borderBottom: "2px solid #E5E5E5", paddingBottom: "8rem" }}
-        >
-          <h3
-            style={{
-              textAlign: "center",
-              color: "#605CFF",
-              marginTop: "70px",
-            }}
-          >
-            OUR PRODUCTS
-          </h3>
+        <Container style={{ borderBottom: "2px solid #E5E5E5", paddingBottom: "8rem" }}>
+          <h3 className={style.ourProducts}> OUR PRODUCTS </h3>
           <Row>
             <CardGroup>
               <Card className={style.card}>
@@ -207,7 +176,7 @@ function LandingPage() {
             <Col>
               <img
                 src={computer}
-                style={{ zIndex: "2", position: "relative" }}
+                style={{ zIndex: "2", position: "relative" }} alt="computer"
               />
               <img
                 src={purpleShadow}
@@ -217,16 +186,12 @@ function LandingPage() {
                   marginTop: "-15rem",
                   marginLeft: "-40rem",
                 }}
+                alt="purpleShadow"
               />
             </Col>
 
             <Col className={style.columnLoyaltyPoint}>
-              <h3>
-                Loyalty Point <br />{" "}
-                <span style={{ fontSize: "22px", color: "#605CFF" }}>
-                  By Bishapay
-                </span>
-              </h3>
+              <h3 className={style.loyaltyPoint}> Loyalty Point <span> By Bishapay </span> </h3>
               <p className={style.teksLoyaltyPoint}>
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
@@ -238,30 +203,24 @@ function LandingPage() {
 
         {/* FAQ SECTION */}
         <Container>
-          <h3 className="text-center fw-bold" style={{marginBottom:"7rem"}}>
-            Frequently asked questions{" "}
-            <BsChevronDown style={{ marginLeft: "2rem" }} />
-          </h3>
+          <div className={style.frequently}>
+            <h3>Frequently asked questions <BsChevronDown style={{ marginLeft: "2rem" }} /></h3>
+          </div>
 
           <div className={style.box}>
-            <img
-              src={news}
-              className={style.news}
-            />
-            <p className={style.newsletter}>Subcribe to our Newsletter</p>
+            <img src={news} alt="news"/>
+            <p>Subcribe to our Newsletter</p>
 
             <div className={style.form}>
-              <input className={style.inputEmail} type="text" placeholder="Enter your Email Address"></input>
+              <input className={style.inputEmail} type="text" placeholder="Enter Email Address"></input>
               <button className={style.subscribeButton}>
                 Subscribe
-                <div className={style.arrowSubs}>
-                  <BsArrowRight />
-                </div>
-                </button>
+              </button>
             </div>
           </div>
         </Container>
       </div>
+      <Footer />
     </div>
     
   );

@@ -100,7 +100,7 @@ function Faq() {
 
           <Col>
             <div className="faqImg">
-              <img src={FaqImg}></img>
+              <img src={FaqImg} alt="FaqImg"></img>
             </div>
           </Col>
         </Row>

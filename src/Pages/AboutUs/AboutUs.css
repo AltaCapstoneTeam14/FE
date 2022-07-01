@@ -4,7 +4,7 @@
     padding: 0;
 }
 .bodyAbout{
-    width: 1200px;
+    width: 100%;
     margin: auto;
 }
 .title{
@@ -20,10 +20,11 @@
 .title h1{
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 700;
-    color:#605CFF;
+    color:#322fff;
     font-size: 60px;
     align-items:center;
     position:relative;
+    margin-top: 20px;
 }
 .title p{
     margin: auto;
@@ -37,47 +38,78 @@
 
 .solutions{
     display: flex;
-    width: 1200px;
+    width: 90%;
     margin: auto;
     margin-top: 40px;
 }
 .solutions h1{
     font-size: 36px;
     font-family: 'Poppins', sans-serif;
+    margin-left: 40px;
+    margin-top: 100px;
 }
 .solutionTexts{
     width: 70%;
-}
-.solutionsTexts h1{
-    font-size: 36px;
-    font-family: 'Poppins', sans-serif;
 }
 .solutionTexts p{
     width: 60%;
     margin-top: 7%;
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
+    margin-left: 40px;
 }
 .colTeam{
     display: flex;
+    margin-left: 40px;
 }
 .ourTeam{
     display: flex;
     margin: 7% 0 ;
+    width: 88%;
     
 }
 .ourTeam img{
-    padding: 0 20px ;
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
 }
 .ourTeam h2{
-    font-size: 36px;
+    font-size: 27px;
     font-family: 'Poppins', sans-serif;
+    margin-left: 30px;
+    margin-top: -20px;
 }
 .ourTeam p{
-    width: 80%;
+    width: 50%;
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    margin-left: 30px;
+}
+.ourTeams{
+    display: flex;
+    margin: 7% 0 ;
+    margin-left: -100px;
+    width: 90%;
+    margin: auto;
+    
+}
+.ourTeams img{
+    width: 80px;
+    height: 80px;
+}
+.ourTeams h2{
+    font-size: 27px;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 30px;
+    margin-top: -20px;
+}
+.ourTeams p{
+    width: 50%;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin-left: 30px;
 }
 
 button{
@@ -97,6 +129,10 @@ button{
     display: flex;
     justify-content: space-between;
 }
+.side img {
+    width: 550px;
+    height: 550px;
+}
 .busy{
     width: 740px;
     height: 494px;
@@ -110,10 +146,29 @@ button{
     width: 70px;
     height: 70px;
     padding: 10px;
+    margin-left: 70px;
 }
 .values p{
     width: 70%;
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+}
+.imageYoung img{
+    width: 400px;
+    height: 400px;
+    margin-top: 90px;
+}
+.btnOurTeam {
+    margin-left: 100px;
+    
+}
+.btnOurTeam button{
+    border-style: none;
+    border:none;
+}
+.ourValue h2 {
+    font-weight: 600;
+    margin-top: 150px;
+    margin-left: 50px;
 }

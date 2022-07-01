@@ -1,6 +1,6 @@
 
 .left{
-    background: #407BFF;
+    background: #605CFF;
     height: 100vh;
 }
 .right{
@@ -26,7 +26,7 @@
     color: #66BCE8;
 }
 .login-btn{
-    background: #4C70FF;
+    background: #605CFF;
     color: white;
 }
 .visible{
@@ -36,4 +36,6 @@
     border: none;
     margin-top: 13px;
     background: transparent;
+    padding: 0px;
+    color: black;
 }

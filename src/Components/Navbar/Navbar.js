@@ -1,12 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
+import jwt_decode from "jwt-decode";
+import authService from '../../Services/auth-services';
 
 function Navbar() {
     const navigate = useNavigate();
     const navigateToLogin = () =>{
         navigate('/login')
     }
+
+    const [currentUser, setCurrentUser] = useState(undefined);
+
+    const logOut = () => {
+        authService.logout();
+        window.location.reload();
+      };
+
+  useEffect(() => {
+    const user = authService.getCurrentUser();
+    const currentDate = new Date()
+
+    if (user) {
+        const decoded = jwt_decode(user.data.token)
+      console.log(decoded.exp * 1000)
+      console.log(currentDate.getTime() - decoded.exp * 1000)
+      setCurrentUser(user);
+    }
+  }, []);
+
   return (
         <>
         <NavbarContainer>
@@ -17,7 +39,14 @@ function Navbar() {
                 <MenuLink href='product'>Product</MenuLink>
                 <MenuLink href='faq'>FAQ</MenuLink>
             </Menu>
-            <LoginButton type='button' onClick={navigateToLogin}>Log In</LoginButton>
+            {
+                currentUser ? (
+                    <LoginButton type='button' onClick={logOut}>Log Out</LoginButton>
+                ) : (
+                    <LoginButton type='button' onClick={navigateToLogin}>Log In</LoginButton>
+                )
+            }
+            
         </NavbarContainer>
 
        
@@ -30,7 +59,7 @@ function Navbar() {
 
 
 const NavbarContainer = styled.nav`
-    width:1200px;
+    width:88%;
     height:100px;
     margin: auto;
     align-items: center;
@@ -66,7 +95,11 @@ const MenuLink = styled.a`
     cursor: pointer;
     padding: 20px;
     margin: 0 20px;
+    color: #000000;
 
+    &:hover{
+        color:#407BFF;
+    }
     &:active {
         color: #407BFF;
     }
@@ -75,6 +108,7 @@ const LoginButton = styled.button`
     padding:10px 30px;
     border-radius:20px;
     background: #605CFF;
+    border: none;
     color: white;
     font-weight: 500;
     cursor: pointer;
