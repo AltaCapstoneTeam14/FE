@@ -21,13 +21,13 @@ export const SidebarData = [
     },
     {
         title: 'Stock',
-        path: '/CustomerData',
+        path: '/Stock',
         icon: <FaIcons.FaCoins/>,
         cName: 'nav-text'
     },
     {
         title: 'Send Benefit',
-        path: '/CustomerData',
+        path: '/SendBenefit',
         icon: <BsIcons.BsFillGiftFill/>,
         cName: 'nav-text'
     }

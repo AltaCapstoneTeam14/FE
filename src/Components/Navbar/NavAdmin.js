@@ -13,44 +13,49 @@ function NavAdmin() {
 
   return (
     <>
-        <NavbarContainer>
-            
-            <Menu>
-                <MenuLink href='/'>Home</MenuLink>
-                <MenuLink href='aboutUs'>About Us</MenuLink>
-                <MenuLink href='product'>Product</MenuLink>
-                <MenuLink href='faq'>FAQ</MenuLink>
-            </Menu>
-            <Link to='#' className='menu-bars' >
-                <FaIcons.FaBars onClick={showSidebar} style={{ color : '#0032E1'}}/>
+      <NavbarContainer>
+        <Menu>
+          <MenuLink href="/">Home</MenuLink>
+          <MenuLink href="aboutUs">About Us</MenuLink>
+          <MenuLink href="product">Product</MenuLink>
+          <MenuLink href="faq">FAQ</MenuLink>
+        </Menu>
+        <div className="navbar">
+          <Link to="#" className="menu-bars">
+            <FaIcons.FaBars
+              onClick={showSidebar}
+              style={{ color: "#0032E1" }}
+            />
+          </Link>
+        </div>
+      </NavbarContainer>
+      <nav className={sidebar ? "nav-menu-active" : "nav-menu"}>
+        <ul className="nav-menu-items" onClick={showSidebar}>
+          <li className="navbar-toggle">
+            <Link to="#" className="menu-bars">
+              <AiIcons.AiFillCloseSquare
+                onClick={showSidebar}
+                className="closeButton"
+              />
             </Link>
-            
-            
-        </NavbarContainer>
-        <nav className={ sidebar ? 'nav-menu-active' : 'nav-menu'}>
-                <ul className='nav-menu-items' onClick={showSidebar}>
-                    <li className='navbar-toggle'>
-                        <Link to='#' className='menu-bars'>
-                            <AiIcons.AiFillCloseSquare onClick={showSidebar}/>
-                        </Link>
-                    </li>
-                    <li className='navbar-toggle'><Logo className='menu-bars'>BISHAPAY</Logo></li>
-                    {SidebarData.map((item,index) => {
-                        return(
-                            <li key={index} className={item.cName}>
-                                <Link to={item.path}>
-                                    {item.icon}
-                                    <span>{item.title}</span>
-                                </Link>
-                            </li>
-                        )
-                    })}
-                </ul>
-            </nav>
-       
-
-        </>
-  )
+          </li>
+          <li className="navbar-toggle">
+            <Logo className="menu-bars">BISHAPAY</Logo>
+          </li>
+          {SidebarData.map((item, index) => {
+            return (
+              <li key={index} className={item.cName}>
+                <Link to={item.path}>
+                  {item.icon}
+                  <span>{item.title}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </>
+  );
 }
 const NavbarContainer = styled.nav`
     width:50%;
