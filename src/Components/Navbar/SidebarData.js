@@ -15,7 +15,7 @@ export const SidebarData = [
     },
     {
         title: 'Point Customer',
-        path: '/CustomerData',
+        path: '/TopUpPage',
         icon: <AiIcons.AiFillDollarCircle/>,
         cName: 'nav-text'
     },
