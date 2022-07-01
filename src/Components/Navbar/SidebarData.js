@@ -15,19 +15,19 @@ export const SidebarData = [
     },
     {
         title: 'Point Customer',
-        path: '/CustomerData',
+        path: '/TopUpPage',
         icon: <AiIcons.AiFillDollarCircle/>,
         cName: 'nav-text'
     },
     {
         title: 'Stock',
-        path: '/CustomerData',
+        path: '/Stock',
         icon: <FaIcons.FaCoins/>,
         cName: 'nav-text'
     },
     {
         title: 'Send Benefit',
-        path: '/CustomerData',
+        path: '/SendBenefit',
         icon: <BsIcons.BsFillGiftFill/>,
         cName: 'nav-text'
     }

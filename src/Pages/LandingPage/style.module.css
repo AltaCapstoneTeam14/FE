@@ -92,6 +92,10 @@
     font-size: 14px;
 }
 
+.inputEmail:focus {
+    outline: none;
+}
+
 .subscribeButton {
     background-color: #407BFF;
     border: none;
