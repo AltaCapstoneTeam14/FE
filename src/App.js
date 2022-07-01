@@ -14,6 +14,10 @@ import AddPulsa from "./Components/Pulsa product/AddPulsa";
 import QuotaPage from "./Pages/QuotaPage/QuotaPage";
 import EditQuota from "./Components/Quota product/EditQuota";
 import AddQuota from "./Components/Quota product/AddQuota";
+import CashOutPage from "./Pages/CashOut Page/CashOutPage";
+import EditCashOut from "./Components/CashOut product/EditCashOut";
+import AddCashOut from "./Components/CashOut product/AddCashOut";
+import EditTopUp from "./Components/Top Up/EditTopUp";
 
 function App() {
   return (
@@ -27,6 +31,7 @@ function App() {
 
           <Route path='/TopUpPage' element={<TopUpPage />}></Route>
           <Route path='/TopUpPage/add' element={<AddTopUp />}></Route>
+          <Route path='/TopUpPage/edit/:id' element={<EditTopUp />}></Route>
 
           <Route path='/PulsaPage' element={<PulsaPage />}></Route>
           <Route path='/PulsaPage/add' element={<AddPulsa />}></Route>
@@ -35,6 +40,10 @@ function App() {
           <Route path='/QuotaPage' element={<QuotaPage />}></Route>
           <Route path='/QuotaPage/add' element={<AddQuota />}></Route>
           <Route path='/QuotaPage/edit/:id' element={<EditQuota />}></Route>
+
+          <Route path='/CashOutPage' element={<CashOutPage />}></Route>
+          <Route path='/CashOutPage/add' element={<AddCashOut />}></Route>
+          <Route path='/CashOutPage/edit/:id' element={<EditCashOut />}></Route>
 
         </Routes>
     </BrowserRouter>

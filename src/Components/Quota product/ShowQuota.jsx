@@ -6,8 +6,7 @@ import { Button } from 'react-bootstrap';
 import "./ShowQuota.css"
 import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin5Fill } from "react-icons/ri";
-
-// import NavAdmin from '../Navbar/NavAdmin'
+import NavAdmin from '../Navbar/NavAdmin'
 
 const ShowQuota = () => {
   const dispatch = useDispatch();
@@ -21,7 +20,7 @@ const ShowQuota = () => {
   return (
     <div>
       <div>
-      {/* <NavAdmin/> */}
+      <NavAdmin/>
       </div>
       <div className='titleTop'>
         <h2>Pulsa Product</h2>

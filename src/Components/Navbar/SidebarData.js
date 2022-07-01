@@ -1,33 +1,31 @@
 import React from 'react'
 import * as BsIcons from 'react-icons/bs'
 import * as AiIcons from 'react-icons/ai'
-// import * as GrIcons from 'react-icons/gr'
 import * as FaIcons from 'react-icons/fa'
-
 
 
 export const SidebarData = [
     {
-        title: 'Customer Data',
-        path: '/CustomerData',
+        title: 'Top Up Product',
+        path: '/TopUpPage',
         icon: <FaIcons.FaUser/>,
         cName: 'nav-text'
     },
     {
-        title: 'Point Customer',
-        path: '/TopUpPage',
+        title: 'Pulsa Product',
+        path: '/PulsaPage',
         icon: <AiIcons.AiFillDollarCircle/>,
         cName: 'nav-text'
     },
     {
-        title: 'Stock',
-        path: '/Stock',
+        title: 'Quota Product',
+        path: '/QuotaPage',
         icon: <FaIcons.FaCoins/>,
         cName: 'nav-text'
     },
     {
-        title: 'Send Benefit',
-        path: '/SendBenefit',
+        title: 'Cashout Product',
+        path: '/CashOutPage',
         icon: <BsIcons.BsFillGiftFill/>,
         cName: 'nav-text'
     }

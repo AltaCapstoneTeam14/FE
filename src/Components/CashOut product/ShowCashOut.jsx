@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { getPulsas, pulsaSelectors, deletePulsa } from "../../features/PulsaSlice"
+import { getCashOut, cashOutSelectors, deleteCashOut } from "../../features/CashOutSlice"
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import "./ShowPulsa.css"
+import "./ShowCashOut.css"
 import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import NavAdmin from '../Navbar/NavAdmin'
 
-const ShowPulsa = () => {
+const ShowCashOut = () => {
   const dispatch = useDispatch();
 
-  const pulsa = useSelector(pulsaSelectors.selectAll);
+  const cashout = useSelector(cashOutSelectors.selectAll);
 
   useEffect(() => {
-    dispatch(getPulsas())
+    dispatch(getCashOut())
   }, [dispatch]) 
 
   return (
@@ -23,9 +23,9 @@ const ShowPulsa = () => {
       <NavAdmin/>
       </div>
       <div className='titleTop'>
-        <h2>Pulsa Product</h2>
+        <h2>Cashout Product</h2>
       </div>
-      <div className='btnPulsa'>
+      <div className='btnCashOut'>
       <Link to="add"><Button variant="success">Add New</Button></Link>
       </div>
       <div className='ShowTopUp'>
@@ -34,28 +34,22 @@ const ShowPulsa = () => {
             <tr>
               <th className="thNo">No</th>
               <th>Name</th>
-              <th>Denom</th>
-              <th>Stock</th>
-              <th>Provider Id</th>
-              <th>Gross Amount</th>
-              <th>Provider Name</th>
+              <th>Coin Amount</th>
+              <th>Balance Amount</th>
               <th className="thAct">actions</th>
             </tr>
           </thead>
           <tbody>
             {
-              pulsa.map((key, index) => (
-                <tr key={key.id}>
+              cashout.map((cash, index) => (
+                <tr key={cash.id}>
                   <td className="tdnumber">{index + 1}</td>
-                  <td>{key.name}</td>
-                  <td>{key.denom}</td>
-                  <td>{key.stock}</td>
-                  <td>{key.provider_id}</td>
-                  <td>{key.gross_amount}</td>
-                  <td>{key.provider_name}</td>
+                  <td>{cash.name}</td>
+                  <td>{cash.coin_amount}</td>
+                  <td>{cash.balance_amount}</td>
                   <td>
-                    <Link to={`edit/${key.id}`}><Button variant="primary" className='px-2 py-1'><AiFillEdit></AiFillEdit></Button></Link>
-                    <Button onClick={() => dispatch(deletePulsa(key.id))} variant="danger" className='px-2 py-1 ms-2'><RiDeleteBin5Fill></RiDeleteBin5Fill></Button>
+                    <Link to={`edit/${cash.id}`}><Button variant="primary" className='px-2 py-1'><AiFillEdit></AiFillEdit></Button></Link>
+                    <Button onClick={() => dispatch(deleteCashOut(cash.id))} variant="danger" className='px-2 py-1 ms-2'><RiDeleteBin5Fill></RiDeleteBin5Fill></Button>
                   </td>
                 </tr>
               ))
@@ -67,4 +61,4 @@ const ShowPulsa = () => {
   )
 }
 
-export default ShowPulsa;
+export default ShowCashOut;

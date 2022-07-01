@@ -49,13 +49,8 @@ const ShowTopUp = () => {
                   <td>{item.amount}</td>
                   <td>{item.gross_amount}</td>
                   <td>
-                    <Button
-                      onClick={() => dispatch(deleteTopUp(item.id))}
-                      variant="danger"
-                      className="px-2 py-1 ms-2"
-                    >
-                      <RiDeleteBin5Fill></RiDeleteBin5Fill>
-                    </Button>
+                    <Link to={`edit/${item.id}`}><Button variant="primary" className='px-2 py-1'><AiFillEdit></AiFillEdit></Button></Link>
+                    <Button onClick={() => dispatch(deleteTopUp(item.id))} variant="danger" className='px-2 py-1 ms-2'><RiDeleteBin5Fill></RiDeleteBin5Fill></Button>
                   </td>
                 </tr>
               ))}
