@@ -13,21 +13,21 @@ function NavAdmin() {
 
   return (
     <>
-      <NavbarContainer>
+      <NavbarContainer >
         <Menu>
           <MenuLink href="/">Home</MenuLink>
           <MenuLink href="aboutUs">About Us</MenuLink>
           <MenuLink href="product">Product</MenuLink>
           <MenuLink href="faq">FAQ</MenuLink>
         </Menu>
-        <div className="navbar">
+        
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars
               onClick={showSidebar}
               style={{ color: "#0032E1" }}
             />
           </Link>
-        </div>
+       
       </NavbarContainer>
       <nav className={sidebar ? "nav-menu-active" : "nav-menu"}>
         <ul className="nav-menu-items" onClick={showSidebar}>
