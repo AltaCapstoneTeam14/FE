@@ -9,6 +9,7 @@ import "./EditTopUp.css"
 
 
 const EditTopUp = () => {
+  const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
   const [gross_amount, setGross_amount] = useState('');
   const dispatch = useDispatch();
@@ -23,13 +24,14 @@ const EditTopUp = () => {
 
   useEffect(() => {
     if(topup){
+      setName(topup.name);
       setAmount(topup.amount);
       setGross_amount(topup.gross_amount);}
   },[topup]);
 
   const handleUpdated = (e) => {
     e.preventDefault();
-    dispatch(updateTopUp({id, amount, gross_amount }));
+    dispatch(updateTopUp({id, name, amount, gross_amount }));
     navigate('/TopUpPage');
   }
 
@@ -41,6 +43,18 @@ const EditTopUp = () => {
         <h3>Edit Data</h3>
         <hr></hr>
         <Form onSubmit={handleUpdated}>
+        <div className="inputEdit">
+          <label>Name</label>
+          <div>
+            <input 
+            type="text" 
+            className="input" 
+            placeholder="Name" 
+            value={name} 
+            onChange={(e) => {setName(e.target.value);}}
+            />
+          </div>
+        </div>
         <div className="inputEdit">
           <label>Amount</label>
           <div>
