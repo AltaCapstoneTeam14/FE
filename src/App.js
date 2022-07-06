@@ -18,6 +18,7 @@ import CashOutPage from "./Pages/CashOut Page/CashOutPage";
 import EditCashOut from "./Components/CashOut product/EditCashOut";
 import AddCashOut from "./Components/CashOut product/AddCashOut";
 import EditTopUp from "./Components/Top Up/EditTopUp";
+import PrivateRoute from "./Components/Private/PrivateRoute";
 
 function App() {
   return (
@@ -29,22 +30,26 @@ function App() {
           <Route path="/aboutus" element={<><AboutUs/></>} />
           <Route path="/faq" element={<><Faq/></>} />
 
-          <Route path='/TopUpPage' element={<TopUpPage />}></Route>
-          <Route path='/TopUpPage/add' element={<AddTopUp />}></Route>
-          <Route path='/TopUpPage/edit/:id' element={<EditTopUp />}></Route>
+          <Route element={<PrivateRoute/>}>
+            <Route path='/TopUpPage' element={<TopUpPage />}></Route>
+            <Route path='/TopUpPage/add' element={<AddTopUp />}></Route>
+            <Route path='/TopUpPage/edit/:id' element={<EditTopUp />}></Route>
 
-          <Route path='/PulsaPage' element={<PulsaPage />}></Route>
-          <Route path='/PulsaPage/add' element={<AddPulsa />}></Route>
-          <Route path='/PulsaPage/edit/:id' element={<EditPulsa />}></Route>
+            <Route path='/PulsaPage' element={<PulsaPage />}></Route>
+            <Route path='/PulsaPage/add' element={<AddPulsa />}></Route>
+            <Route path='/PulsaPage/edit/:id' element={<EditPulsa />}></Route>
 
-          <Route path='/QuotaPage' element={<QuotaPage />}></Route>
-          <Route path='/QuotaPage/add' element={<AddQuota />}></Route>
-          <Route path='/QuotaPage/edit/:id' element={<EditQuota />}></Route>
+            <Route path='/QuotaPage' element={<QuotaPage />}></Route>
+            <Route path='/QuotaPage/add' element={<AddQuota />}></Route>
+            <Route path='/QuotaPage/edit/:id' element={<EditQuota />}></Route>
 
-          <Route path='/CashOutPage' element={<CashOutPage />}></Route>
-          <Route path='/CashOutPage/add' element={<AddCashOut />}></Route>
-          <Route path='/CashOutPage/edit/:id' element={<EditCashOut />}></Route>
+            <Route path='/CashOutPage' element={<CashOutPage />}></Route>
+            <Route path='/CashOutPage/add' element={<AddCashOut />}></Route>
+            <Route path='/CashOutPage/edit/:id' element={<EditCashOut />}></Route>
 
+
+          </Route>
+          
         </Routes>
     </BrowserRouter>
     </>
