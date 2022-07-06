@@ -5,7 +5,7 @@ import axios from "axios";
 
 const login = (email, password) => {
   return axios
-    .post("/api/login/admin", {
+    .post("http://44.201.153.46:8081/api-dev/v1/auth/login/admin", {
       email,
       password,
     })
