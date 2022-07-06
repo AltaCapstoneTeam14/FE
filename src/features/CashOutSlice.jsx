@@ -3,12 +3,12 @@ import axios from "axios";
 import authHeader from "../Services/auth-header";
 
 export const getCashOut = createAsyncThunk("cashOut/getCashOut", async() => {
-    const response = await axios.get('http://44.201.153.46:8081/api-dev/v1/products/cashout', { headers: authHeader() });
+    const response = await axios.get('/api/v1/products/cashout', { headers: authHeader() });
     return response.data.data;
 });
 
 export const saveCashOut = createAsyncThunk("cashOut/saveCashOut", async ({ name, coin_amount, balance_amount }) => {
-  const response = await axios.post('http://44.201.153.46:8081/api-dev/v1/products/cashout', {
+  const response = await axios.post('/api/v1/products/cashout', {
       name,
       coin_amount,
       balance_amount
@@ -17,7 +17,7 @@ export const saveCashOut = createAsyncThunk("cashOut/saveCashOut", async ({ name
 });
 
 export const updateCashOut = createAsyncThunk("cashOut/updateCashOut", async ({ id, name, coin_amount, balance_amount }) => {
-  const response = await axios.put(`http://44.201.153.46:8081/api-dev/v1/products/cashout/${id}`, {
+  const response = await axios.put(`/api/v1/products/cashout/${id}`, {
       name,
       coin_amount,
       balance_amount
@@ -26,7 +26,7 @@ export const updateCashOut = createAsyncThunk("cashOut/updateCashOut", async ({ 
 });
 
 export const deleteCashOut = createAsyncThunk("cashOut/deleteCashOut", async (id) => {
-    await axios.delete(`http://44.201.153.46:8081/api-dev/v1/products/cashout/${id}` , { headers: authHeader()}) ;
+    await axios.delete(`/api/v1/products/cashout/${id}` , { headers: authHeader()}) ;
     return id;
 
 });
