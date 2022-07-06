@@ -31,6 +31,7 @@ function Login() {
           window.location.reload();
         }, (error) => {
           error.response.data.errors.map((e) => {
+            console.log(error.response);
             return setError( arr => [...arr, e])
           })
           console.log(error.response.data.errors);
