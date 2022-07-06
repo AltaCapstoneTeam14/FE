@@ -24,7 +24,7 @@ export const updateTopUp = createAsyncThunk("topUps/updateTopUp", async ({ id, a
 });
 
 export const deleteTopUp = createAsyncThunk("topUps/deleteTopUp", async (id) => {
-    await axios.delete(`http://44.201.153.46:8081/api-dev/v1/products/topup/${id}` , { headers: authHeader()}) ;
+    await axios.delete(`/api/v1/products/topup/${id}` , { headers: authHeader()}) ;
     return id;
 
 });

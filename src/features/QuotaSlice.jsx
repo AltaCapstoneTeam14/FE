@@ -20,7 +20,7 @@ export const saveQuota = createAsyncThunk("quota/saveQuota", async ({ name, desc
 });
 
 export const updateQuota = createAsyncThunk("quota/updateQuota", async ({ id, name, description, stock, provider_id, gross_amount, provider_name }) => {
-  const response = await axios.put(`http://44.201.153.46:8081/api-dev/v1/products/quota/${id}`, {
+  const response = await axios.put(`/api/v1/products/quota/${id}`, {
       name,
       description,
       stock,
@@ -32,7 +32,7 @@ export const updateQuota = createAsyncThunk("quota/updateQuota", async ({ id, na
 });
 
 export const deleteQuota = createAsyncThunk("quota/deleteQuota", async (id) => {
-    await axios.delete(`http://44.201.153.46:8081/api-dev/v1/products/quota/${id}` , { headers: authHeader()}) ;
+    await axios.delete(`/api/v1/products/quota/${id}` , { headers: authHeader()}) ;
     return id;
 
 });
