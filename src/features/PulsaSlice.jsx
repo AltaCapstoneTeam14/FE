@@ -3,12 +3,12 @@ import axios from "axios";
 import authHeader from "../Services/auth-header";
 
 export const getPulsas = createAsyncThunk("pulsa/getPulsas", async() => {
-    const response = await axios.get('http://44.201.153.46:8081/api-dev/v1/products/pulsa', { headers: authHeader() });
+    const response = await axios.get('/api/v1/products/pulsa', { headers: authHeader() });
     return response.data.data;
 });
 
 export const savePulsa = createAsyncThunk("pulsa/savePulsa", async ({ name, denom, stock, provider_id, gross_amount, provider_name}) => {
-  const response = await axios.post('http://44.201.153.46:8081/api-dev/v1/products/pulsa', {
+  const response = await axios.post('/api/api-dev/v1/products/pulsa', {
       name,
       denom,
       stock,
