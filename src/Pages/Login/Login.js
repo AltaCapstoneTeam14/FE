@@ -31,7 +31,7 @@ function Login() {
           window.location.reload();
         }, (error) => {
           error.response.data.errors.map((e) => {
-            console.log(error.response);
+            console.log(error.response.data.errors);
             return setError( arr => [...arr, e])
           })
           console.log(error.response.data.errors);
@@ -40,7 +40,7 @@ function Login() {
         }
       )
     }catch (err) {
-      console.log(err.response)
+      console.log(err)
   }
   
   }
