@@ -37,6 +37,7 @@ const ShowTopUp = () => {
             <thead>
               <tr>
                 <th className="thNo">No</th>
+                <th>Name</th>
                 <th>Amount</th>
                 <th>Groos Amount</th>
                 <th className="thAct">actions</th>
@@ -46,6 +47,7 @@ const ShowTopUp = () => {
               {topup.map((item, index) => (
                 <tr key={item.id}>
                   <td className="tdnumber">{index + 1}</td>
+                  <td>{item.name}</td>
                   <td>{item.amount}</td>
                   <td>{item.gross_amount}</td>
                   <td>

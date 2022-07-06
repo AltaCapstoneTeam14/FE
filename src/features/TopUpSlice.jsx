@@ -7,16 +7,18 @@ export const getTopUps = createAsyncThunk("topUps/getTopUps", async() => {
     return response.data.data;
 });
 
-export const saveTopUp = createAsyncThunk("topUps/saveTopUp", async ({ amount, gross_amount }) => {
+export const saveTopUp = createAsyncThunk("topUps/saveTopUp", async ({ name, amount, gross_amount }) => {
   const response = await axios.post('http://44.201.153.46:8081/api-dev/v1/products/topup', {
+      name,
       amount,
       gross_amount
   },{ headers: authHeader() });
   return response.data.data;
 });
 
-export const updateTopUp = createAsyncThunk("topUps/updateTopUp", async ({ id, amount, gross_amount }) => {
+export const updateTopUp = createAsyncThunk("topUps/updateTopUp", async ({ id, name, amount, gross_amount }) => {
   const response = await axios.put(`http://44.201.153.46:8081/api-dev/v1/products/topup/${id}`, {
+      name,
       amount,
       gross_amount
   },{ headers: authHeader() });
@@ -33,12 +35,10 @@ const topUpEntity = createEntityAdapter({
     selectId: (topup) => topup.id
 })
 
-
-
 const topUpSlice = createSlice({
-  name: "topup",
-  initialState: topUpEntity.getInitialState(),
-  extraReducers: {
+    name: "topup",
+    initialState: topUpEntity.getInitialState(),
+    extraReducers: {
     [getTopUps.fulfilled]: (state, action) => {
       topUpEntity.setAll(state, action.payload); 
     },
@@ -53,7 +53,7 @@ const topUpSlice = createSlice({
         id: action.payload.id, 
         changes: action.payload});
     },
-  },
+    },
 });
 
 export const topUpSelectors = topUpEntity.getSelectors(state => state.topup)
