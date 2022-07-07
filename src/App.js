@@ -21,6 +21,7 @@ import AddCashOut from "./Components/CashOut product/AddCashOut";
 import PrivateRoute from "./Components/Private/PrivateRoute";
 import SubscribePage from "./Pages/SubscribePage/SubscribePage"
 
+import Loading from "./Components/Loading/Loading"
 function App() {
   return (
     <>
@@ -49,6 +50,8 @@ function App() {
             <Route path='/CashOutPage/edit/:id' element={<EditCashOut />}></Route>
 
             <Route path='/SubscribePage' element={<SubscribePage />}></Route>
+
+            <Route path='/Loading' element={<Loading />}></Route>
 
           </Route>
           

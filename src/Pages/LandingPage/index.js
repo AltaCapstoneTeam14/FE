@@ -203,7 +203,7 @@ function LandingPage() {
             </Col>
 
             <Col className={style.columnLoyaltyPoint}>
-              <h3 className={style.loyaltyPoint}> Loyalty Point <span> By Bishapay </span> </h3>
+              <h3 className={style.loyaltyPoint}> Loyalty Point <br></br><span style={{marginLeft: "0px"}}> By Bishapay </span> </h3>
               <p className={style.teksLoyaltyPoint}>
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
