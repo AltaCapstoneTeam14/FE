@@ -3,6 +3,7 @@ import topUpReducer from "../features/TopUpSlice";
 import pulsaReducer from "../features/PulsaSlice";
 import quotaReducer from "../features/QuotaSlice";
 import cashOutReducer from "../features/CashOutSlice";
+import subscribeReducer from "../features/SubscribeSlice";
 
 export const store = configureStore({
     reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
         pulsa: pulsaReducer,
         quota: quotaReducer,
         cashout: cashOutReducer,
+        subscribe: subscribeReducer,
     },
 });

@@ -7,6 +7,7 @@ import Login from "./Pages/Login/Login";
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Faq from "./Pages/Faq/Faq";
 import TopUpPage from "./Pages/TopUpPage/TopUpPage";
+import EditTopUp from "./Components/Top Up/EditTopUp";
 import AddTopUp from "./Components/Top Up/AddTopUp";
 import PulsaPage from "./Pages/PulsaPage/PulsaPage";
 import EditPulsa from "./Components/Pulsa product/EditPulsa";
@@ -17,8 +18,8 @@ import AddQuota from "./Components/Quota product/AddQuota";
 import CashOutPage from "./Pages/CashOut Page/CashOutPage";
 import EditCashOut from "./Components/CashOut product/EditCashOut";
 import AddCashOut from "./Components/CashOut product/AddCashOut";
-import EditTopUp from "./Components/Top Up/EditTopUp";
 import PrivateRoute from "./Components/Private/PrivateRoute";
+import SubscribePage from "./Pages/SubscribePage/SubscribePage"
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             <Route path='/CashOutPage/add' element={<AddCashOut />}></Route>
             <Route path='/CashOutPage/edit/:id' element={<EditCashOut />}></Route>
 
+            <Route path='/SubscribePage' element={<SubscribePage />}></Route>
 
           </Route>
           
