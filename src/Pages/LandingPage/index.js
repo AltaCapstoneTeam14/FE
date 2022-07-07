@@ -32,6 +32,7 @@ function LandingPage() {
   const createTopUp = (e) => {
     e.preventDefault();
     dispatch(saveSubscribe({ email }));
+    setEmail('');
   }  
 
   return (
