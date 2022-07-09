@@ -14,9 +14,12 @@ const ShowTopUp = () => {
 
   const topup = useSelector(topUpSelectors.selectAll);
 
+
   useEffect(() => {
     dispatch(getTopUps())
   }, [dispatch]) 
+
+  
 
   return (
     <div>

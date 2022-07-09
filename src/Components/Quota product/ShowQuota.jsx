@@ -25,7 +25,7 @@ const ShowQuota = () => {
       <div className='titleTop'>
         <h2>Pulsa Product</h2>
       </div>
-      <div className='btnPulsa'>
+      <div className='btnQuota'>
       <Link to="add"><Button variant="success">Add New</Button></Link>
       </div>
       <div className='ShowTopUp'>

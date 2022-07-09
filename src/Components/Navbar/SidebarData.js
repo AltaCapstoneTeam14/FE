@@ -28,5 +28,11 @@ export const SidebarData = [
         path: '/CashOutPage',
         icon: <BsIcons.BsFillGiftFill/>,
         cName: 'nav-text'
-    }
+    },
+    {
+        title: 'Subscribe',
+        path: '/SubscribePage',
+        icon: <BsIcons.BsFillGiftFill/>,
+        cName: 'nav-text'
+    },
 ]

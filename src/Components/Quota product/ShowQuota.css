@@ -58,11 +58,11 @@ tr:nth-child(even){
     justify-content: center;
     align-items: center;
 }
-.btnPulsa {
+.btnQuota {
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    margin-left: 1050px;
+    margin-left: 910px;
     font-size: 10px;
 }
 .btnTop Button {
