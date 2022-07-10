@@ -34,7 +34,7 @@ const ShowQuota = () => {
             <tr>
               <th className="thNo">No</th>
               <th>Name</th>
-              <th>Description</th>
+              <th className='thdesc'>Description</th>
               <th>Stock</th>
               <th>Provider Id</th>
               <th>Gross Amount</th>

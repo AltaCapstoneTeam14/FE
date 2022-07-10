@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "./ShowAdmin.css";
 import { AiFillEdit } from "react-icons/ai";
-import { RiDeleteBin5Fill } from "react-icons/ri";
 
 import NavAdmin from "../Navbar/NavAdmin";
 
@@ -42,9 +41,7 @@ const ShowAdmin = () => {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Balance Id</th>
                 <th>Balance Amount</th>
-                <th>Coin Id</th>
                 <th>Coin Amount</th><th className="thAct">actions</th>
               </tr>
             </thead>
@@ -55,9 +52,7 @@ const ShowAdmin = () => {
                   <td>{point.name}</td>
                   <td>{point.email}</td>
                   <td>{point.phone}</td>
-                  <td>{point.balance.id}</td>
                   <td>{point.balance.amount}</td>
-                  <td>{point.coin.id}</td>
                   <td>{point.coin.amount}</td>
                  
                   <td> 
