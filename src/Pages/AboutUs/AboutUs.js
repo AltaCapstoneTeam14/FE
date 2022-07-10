@@ -43,9 +43,9 @@ function AboutUs() {
                 <img src={young} alt="young"></img>
                 </div>
             </div>
-            <div className='btnOurTeam'>
+            {/* <div className='btnOurTeam'>
             <button>Our Team </button>
-            </div>
+            </div> */}
             <div className='ourValue'>
             <h2>Our Values</h2>
             </div>

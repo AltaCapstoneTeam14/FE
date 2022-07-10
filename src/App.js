@@ -5,6 +5,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import LandingPage from './Pages/LandingPage/index'
 import Login from "./Pages/Login/Login";
 import AboutUs from './Pages/AboutUs/AboutUs';
+import Features from "./Pages/Features/Features";
 import Faq from "./Pages/Faq/Faq";
 import TopUpPage from "./Pages/TopUpPage/TopUpPage";
 import EditTopUp from "./Components/Top Up/EditTopUp";
@@ -23,6 +24,7 @@ import SubscribePage from "./Pages/SubscribePage/SubscribePage";
 import Loading from "./Components/Loading/Loading"
 import AdminPage from "./Pages/Admin Page/AdminPage";
 import EditAdmin from "./Components/Admin/EditAdmin";
+
 function App() {
   return (
     <>
@@ -34,6 +36,14 @@ function App() {
             element={
               <>
                 <Login />
+              </>
+            }
+          />
+          <Route
+            path="/features"
+            element={
+              <>
+                <Features />
               </>
             }
           />

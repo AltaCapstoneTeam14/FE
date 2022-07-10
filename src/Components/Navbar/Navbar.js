@@ -39,7 +39,7 @@ function Navbar() {
                 <Menu>
                     <MenuLink href='/'>Home</MenuLink>
                     <MenuLink href='aboutUs'>About Us</MenuLink>
-                    <MenuLink href='product'>Product</MenuLink>
+                    <MenuLink href='features'>Features</MenuLink>
                     <MenuLink href='faq'>FAQ</MenuLink>
                 </Menu>
                 {

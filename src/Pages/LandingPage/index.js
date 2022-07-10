@@ -1,9 +1,7 @@
 import style from "./style.module.css";
-import { Container, Button, Row, Col, Card, CardGroup, Form } from "react-bootstrap";
+import { Container, Button, Row, Col, Card, CardGroup } from "react-bootstrap";
 
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { saveSubscribe } from "../../features/SubscribeSlice";
+import React from "react";
 
 // images
 import image1 from "../../Images/images-1.png";
@@ -14,26 +12,15 @@ import coins from "../../Images/Coins three.svg";
 import walletCard from "../../Images/Wallet Cards.svg";
 import computer from "../../Images/computer.png";
 import purpleShadow from "../../Images/Ellipse 12.png";
-import news from "../../Images/news 1.png"
 // icons
 import { GoPrimitiveDot } from "react-icons/go";
 import { BsChevronRight } from "react-icons/bs";
-import { BsChevronDown } from "react-icons/bs";
 
 // components
 import Footer from "../../Components/Footer/Footer"
 import Navbar from "../../Components/Navbar/Navbar";
 
-function LandingPage() {
-
-  const [email, setEmail] = useState('');
-  const dispatch = useDispatch();
-
-  const createTopUp = (e) => {
-    e.preventDefault();
-    dispatch(saveSubscribe({ email }));
-    setEmail('');
-  }  
+function LandingPage() { 
 
   return (
     <div>
@@ -211,31 +198,6 @@ function LandingPage() {
               </p>
             </Col>
           </Row>
-        </Container>
-
-        {/* FAQ SECTION */}
-        <Container>
-          <div className={style.frequently}>
-            <h3>Frequently asked questions <BsChevronDown style={{ marginLeft: "2rem" }} /></h3>
-          </div>
-
-          <div className={style.box}>
-            <img src={news} alt="news"/>
-            <p>Subcribe to our Newsletter</p>
-
-            <Form onSubmit={createTopUp} className={style.form}>
-              <div>
-                <input 
-                type="text" 
-                className={style.inputEmail}
-                placeholder="Email" 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-                <Button variant="success" type="submit" className={style.subscribeButton}>Submit</Button>
-            </Form>
-          </div>
         </Container>
       </div>
       <Footer />
