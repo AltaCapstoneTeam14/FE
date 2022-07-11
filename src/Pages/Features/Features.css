@@ -4,6 +4,7 @@
 .imgFeatures img{
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 .frequently {
     font-size: 30px;

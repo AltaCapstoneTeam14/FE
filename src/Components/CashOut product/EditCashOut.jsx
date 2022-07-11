@@ -38,7 +38,7 @@ const EditCashOut = () => {
   return (
     <div>
       
-      <Card className="cardEdit">
+      <Card className="cardCashEdit">
       <Card.Body>
         <h3>Edit Data</h3>
         <hr></hr>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { getCashOut, cashOutSelectors, deleteCashOut } from "../../features/CashOutSlice"
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ import NavAdmin from '../Navbar/NavAdmin'
 
 const ShowCashOut = () => {
   const dispatch = useDispatch();
-
+  const [searchTerm, setSearchTerm] = useState('')
   const cashout = useSelector(cashOutSelectors.selectAll);
 
   useEffect(() => {
@@ -25,9 +25,16 @@ const ShowCashOut = () => {
       <div className='titleTop'>
         <h2>Cashout Product</h2>
       </div>
-      <div className='btnCashOut'>
-      <Link to="add"><Button variant="success">Add New</Button></Link>
-      </div>
+      <div className='cashoutSearch'>
+        <div className='searchCashout'>
+          <input type="text" placeholder="Search . . ." onChange={e => {setSearchTerm(e.target.value)}}></input>
+        </div>
+        <div className="btnCash">
+          <Link to="add">
+            <Button variant="success">Add New</Button>
+          </Link>
+        </div>
+        </div>
       <div className='ShowTopUp'>
         <table>
           <thead>
@@ -41,7 +48,13 @@ const ShowCashOut = () => {
           </thead>
           <tbody>
             {
-              cashout.map((cash, index) => (
+              cashout.filter((cash) => {
+                if (searchTerm === "") {
+                  return cash
+                } else if (cash.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                  return cash
+                }
+              }).map((cash, index) => (
                 <tr key={cash.id}>
                   <td className="tdnumber">{index + 1}</td>
                   <td>{cash.name}</td>

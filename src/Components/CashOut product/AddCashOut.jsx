@@ -22,7 +22,7 @@ const AddCashOut = () => {
 
   return (
     <div>
-      <Card className="cardEdit">
+      <Card className="cardCashout">
       <Card.Body>
         <h3>Add Data</h3>
         <hr></hr>

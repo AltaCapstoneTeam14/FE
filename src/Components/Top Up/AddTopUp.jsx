@@ -22,7 +22,7 @@ const AddTopUp = () => {
 
   return (
     <div>
-      <Card className="cardEdit">
+      <Card className="cardTop">
       <Card.Body>
         <h3>Add Data</h3>
         <hr></hr>

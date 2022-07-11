@@ -44,7 +44,7 @@ const EditQuota = () => {
   return (
     <div>
       
-      <Card className="cardEdit">
+      <Card className="cardQuotaData">
       <Card.Body>
         <h3>Edit Data</h3>
         <hr></hr>

@@ -72,3 +72,21 @@ tr:nth-child(even){
 .btnTop Button {
     font-size: 15px;
 }
+.searchSubscribe input{
+    padding: 7px;
+    width: 300px;
+    border: none;
+    border-bottom: 1.5px solid black;
+    margin-left: 520px;
+    margin-top: 7px;
+}
+.searchSubscribe input::placeholder {
+    color: black;
+    font-size: 17px;
+}
+.subscribeSearch {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

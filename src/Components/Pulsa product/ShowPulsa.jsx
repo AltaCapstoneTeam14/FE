@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { getPulsas, pulsaSelectors, deletePulsa } from "../../features/PulsaSlice"
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ import NavAdmin from '../Navbar/NavAdmin'
 
 const ShowPulsa = () => {
   const dispatch = useDispatch();
-
+  const [searchTerm, setSearchTerm] = useState('')
   const pulsa = useSelector(pulsaSelectors.selectAll);
 
   useEffect(() => {
@@ -25,9 +25,16 @@ const ShowPulsa = () => {
       <div className='titleTop'>
         <h2>Pulsa Product</h2>
       </div>
-      <div className='btnPulsa'>
-      <Link to="add"><Button variant="success">Add New</Button></Link>
-      </div>
+      <div className='pulsaSearch'>
+        <div className='searchPulsa'>
+          <input type="text" placeholder="Search . . ." onChange={e => {setSearchTerm(e.target.value)}}></input>
+        </div>
+        <div className="btnPulsa">
+          <Link to="add">
+            <Button variant="success">Add New</Button>
+          </Link>
+        </div>
+        </div>
       <div className='ShowTopUp'>
         <table>
           <thead>
@@ -44,7 +51,13 @@ const ShowPulsa = () => {
           </thead>
           <tbody>
             {
-              pulsa.map((key, index) => (
+              pulsa.filter((key) => {
+                if (searchTerm === "") {
+                  return key
+                } else if (key.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                  return key
+                }
+              }).map((key, index) => (
                 <tr key={key.id}>
                   <td className="tdnumber">{index + 1}</td>
                   <td>{key.name}</td>

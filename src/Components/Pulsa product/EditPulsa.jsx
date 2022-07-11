@@ -44,7 +44,7 @@ const EditPulsa = () => {
   return (
     <div>
       
-      <Card className="cardEdit">
+      <Card className="cardPulsaData">
       <Card.Body>
         <h3>Edit Data</h3>
         <hr></hr>

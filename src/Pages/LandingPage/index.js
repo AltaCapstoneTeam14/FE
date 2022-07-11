@@ -1,6 +1,5 @@
 import style from "./style.module.css";
 import { Container, Button, Row, Col, Card, CardGroup } from "react-bootstrap";
-
 import React from "react";
 
 // images
@@ -21,7 +20,6 @@ import Footer from "../../Components/Footer/Footer"
 import Navbar from "../../Components/Navbar/Navbar";
 
 function LandingPage() { 
-
   return (
     <div>
       <div>
@@ -70,10 +68,7 @@ function LandingPage() {
               </h2>
               <div className={style.paragraphLanding}>
               <p>
-                Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et.
-                Sunt qui esse pariatur duis deserunt mollit dolore cillum minim
-                tempor enim. Elit aute irure tempor cupidatat incididunt sint
-                deserunt ut voluptate aute id deserunt nisi.
+                Get convenience in every transaction with the bishapay loyalty program. bishapay is a customer loyalty management solutions provider committed to providing the most comprehensive range of customer retention and engagement solutions.
               </p>
               </div>
             </Col>

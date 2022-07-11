@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getAdmin,
@@ -13,7 +13,7 @@ import NavAdmin from "../Navbar/NavAdmin";
 
 const ShowAdmin = () => {
   const dispatch = useDispatch();
-
+  const [searchTerm, setSearchTerm] = useState('')
   const admin = useSelector(adminSelectors.selectAll);
 
 
@@ -32,7 +32,11 @@ const ShowAdmin = () => {
         <div className="titleTop">
           <h2>Data Admin</h2>
         </div>
-
+        <div className='adminSearch'>
+        <div className='searchAdmin'>
+          <input type="text" placeholder="Search . . ." onChange={e => {setSearchTerm(e.target.value)}}></input>
+        </div>
+        </div>
         <div className="ShowAdmin">
           <table>
             <thead>
@@ -46,7 +50,13 @@ const ShowAdmin = () => {
               </tr>
             </thead>
             <tbody>
-              {admin.map((point, index) => (
+              {admin.filter((point) => {
+                if (searchTerm === "") {
+                  return point
+                } else if (point.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                  return point
+                }
+              }).map((point, index) => (
                 <tr key={point.id}>
                   <td className="tdnumber">{index + 1}</td>
                   <td>{point.name}</td>

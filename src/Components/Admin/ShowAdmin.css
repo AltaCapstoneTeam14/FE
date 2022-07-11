@@ -58,3 +58,21 @@ tr:nth-child(even){
     justify-content: center;
     align-items: center;
 }
+.searchAdmin input{
+    padding: 7px;
+    width: 300px;
+    border: none;
+    border-bottom: 1.5px solid black;
+    margin-left: 270px;
+    margin-top: 7px;
+}
+.searchAdmin input::placeholder {
+    color: black;
+    font-size: 17px;
+}
+.adminSearch {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

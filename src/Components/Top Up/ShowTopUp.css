@@ -61,10 +61,28 @@ tr:nth-child(even){
 .btnTop {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    margin-left: 360px;
+    margin-left: 50px;
     font-size: 10px;
+    margin-top: 10px;
 }
 .btnTop Button {
     font-size: 15px;
+}
+.searchTopUp input{
+    padding: 7px;
+    width: 300px;
+    border: none;
+    border-bottom: 1.5px solid black;
+    margin-left: 427px;
+    margin-top: 7px;
+}
+.searchTopUp input::placeholder {
+    color: black;
+    font-size: 17px;
+}
+.topUpSearch {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }

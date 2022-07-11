@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-// import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { getSubscribe, subscribeSelectors, deleteSubscribe } from "../../features/SubscribeSlice"
 import { Button } from 'react-bootstrap';
@@ -9,7 +8,7 @@ import NavAdmin from '../Navbar/NavAdmin'
 
 const ShowSubscribe = () => {
   const dispatch = useDispatch();
-
+  const [searchTerm, setSearchTerm] = useState('')
   const subscribes = useSelector(subscribeSelectors.selectAll);
 
   useEffect(() => {
@@ -24,9 +23,11 @@ const ShowSubscribe = () => {
       <div className='titleTop'>
         <h2>Subscribe</h2>
       </div>
-      {/* <div className='btnQuota'>
-      <Link to="add"><Button variant="success">Add New</Button></Link>
-      </div> */}
+      <div className='subscribeSearch'>
+        <div className='searchSubscribe'>
+          <input type="text" placeholder="Search . . ." onChange={e => {setSearchTerm(e.target.value)}}></input>
+        </div>
+      </div>
       <div className='ShowTopUp'>
         <table>
           <thead>
@@ -38,7 +39,13 @@ const ShowSubscribe = () => {
           </thead>
           <tbody>
             {
-              subscribes.map((subscribe, index) => (
+              subscribes.filter((subscribe) => {
+                if (searchTerm === "") {
+                  return subscribe
+                } else if (subscribe.email.toLowerCase().includes(searchTerm.toLowerCase())) {
+                  return subscribe
+                }
+              }).map((subscribe, index) => (
                 <tr key={subscribe.id}>
                   <td className="tdnumber">{index + 1}</td>
                   <td className='tdEmail'>{subscribe.email}</td>

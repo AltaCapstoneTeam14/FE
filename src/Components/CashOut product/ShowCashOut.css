@@ -58,13 +58,31 @@ tr:nth-child(even){
     justify-content: center;
     align-items: center;
 }
-.btnCashOut {
+.btnCash {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    margin-left: 410px;
+    margin-left: 110px;
     font-size: 10px;
+    margin-top: 10px;
 }
 .btnTop Button {
     font-size: 15px;
+}
+.searchCashout input{
+    padding: 7px;
+    width: 300px;
+    border: none;
+    border-bottom: 1.5px solid black;
+    margin-left: 445px;
+    margin-top: 7px;
+}
+.searchCashout input::placeholder {
+    color: black;
+    font-size: 17px;
+}
+.cashoutSearch {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }

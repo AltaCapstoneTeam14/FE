@@ -41,7 +41,7 @@ const EditAdmin = () => {
   return (
     <div>
       
-      <Card className="cardEdit">
+      <Card className="cardAdminData">
       <Card.Body>
         <h3>Edit Data Admin</h3>
         <hr></hr>

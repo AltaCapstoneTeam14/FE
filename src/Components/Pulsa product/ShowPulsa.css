@@ -61,10 +61,28 @@ tr:nth-child(even){
 .btnPulsa {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    margin-left: 615px;
+    margin-left: 315px;
     font-size: 10px;
+    margin-top: 10px;
 }
 .btnTop Button {
     font-size: 15px;
+}
+.pulsaSearch {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.searchPulsa input{
+    padding: 7px;
+    width: 300px;
+    border: none;
+    border-bottom: 1.5px solid black;
+    margin-left: 345px;
+    margin-top: 7px;
+}
+.searchPulsa input::placeholder {
+    color: black;
+    font-size: 17px;
 }

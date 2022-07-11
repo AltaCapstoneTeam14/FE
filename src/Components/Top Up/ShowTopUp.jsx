@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { getTopUps, topUpSelectors, deleteTopUp } from "../../features/TopUpSlice"
 import { Link } from 'react-router-dom';
@@ -11,7 +11,7 @@ import NavAdmin from '../Navbar/NavAdmin'
 
 const ShowTopUp = () => {
   const dispatch = useDispatch();
-
+  const [searchTerm, setSearchTerm] = useState('')
   const topup = useSelector(topUpSelectors.selectAll);
 
 
@@ -30,10 +30,15 @@ const ShowTopUp = () => {
         <div className="titleTop">
           <h2>Top Up Product</h2>
         </div>
+        <div className='topUpSearch'>
+        <div className='searchTopUp'>
+          <input type="text" placeholder="Search . . ." onChange={e => {setSearchTerm(e.target.value)}}></input>
+        </div>
         <div className="btnTop">
           <Link to="add">
             <Button variant="success">Add New</Button>
           </Link>
+        </div>
         </div>
         <div className="ShowTopUp">
           <table>
@@ -47,7 +52,13 @@ const ShowTopUp = () => {
               </tr>
             </thead>
             <tbody>
-              {topup.map((item, index) => (
+              {topup.filter((item) => {
+                if (searchTerm === "") {
+                  return item
+                } else if (item.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                  return item
+                }
+              }).map((item, index) => (
                 <tr key={item.id}>
                   <td className="tdnumber">{index + 1}</td>
                   <td>{item.name}</td>

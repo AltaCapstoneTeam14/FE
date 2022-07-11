@@ -38,7 +38,7 @@ const EditTopUp = () => {
   return (
     <div>
       
-      <Card className="cardEdit">
+      <Card className="cardTopUpData">
       <Card.Body>
         <h3>Edit Data</h3>
         <hr></hr>
