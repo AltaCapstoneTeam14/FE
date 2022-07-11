@@ -56,6 +56,8 @@ const ShowQuota = () => {
                   return quota
                 } else if (quota.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                   return quota
+                } else {
+                  return null
                 }
               }).map((quota, index) => (
                 <tr key={quota.id}>

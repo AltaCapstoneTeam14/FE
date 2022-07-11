@@ -56,6 +56,8 @@ const ShowPulsa = () => {
                   return key
                 } else if (key.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                   return key
+                } else {
+                  return null
                 }
               }).map((key, index) => (
                 <tr key={key.id}>

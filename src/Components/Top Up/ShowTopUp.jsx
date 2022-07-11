@@ -57,6 +57,8 @@ const ShowTopUp = () => {
                   return item
                 } else if (item.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                   return item
+                } else {
+                  return null
                 }
               }).map((item, index) => (
                 <tr key={item.id}>

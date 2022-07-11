@@ -55,6 +55,8 @@ const ShowAdmin = () => {
                   return point
                 } else if (point.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                   return point
+                } else {
+                  return null
                 }
               }).map((point, index) => (
                 <tr key={point.id}>

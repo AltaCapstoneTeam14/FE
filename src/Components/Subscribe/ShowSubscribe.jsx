@@ -44,6 +44,8 @@ const ShowSubscribe = () => {
                   return subscribe
                 } else if (subscribe.email.toLowerCase().includes(searchTerm.toLowerCase())) {
                   return subscribe
+                } else {
+                  return null
                 }
               }).map((subscribe, index) => (
                 <tr key={subscribe.id}>

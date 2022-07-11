@@ -53,6 +53,8 @@ const ShowCashOut = () => {
                   return cash
                 } else if (cash.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                   return cash
+                } else {
+                  return null
                 }
               }).map((cash, index) => (
                 <tr key={cash.id}>
