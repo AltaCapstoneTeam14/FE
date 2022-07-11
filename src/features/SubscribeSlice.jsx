@@ -9,7 +9,7 @@ export const getSubscribe = createAsyncThunk("subscribe/getSubscribe", async() =
 
 export const saveSubscribe = createAsyncThunk("subscribe/saveSubscribe", async ({ email }) => {
   const response = await axios.post('http://44.201.153.46:8081/api-dev/v1/subscribers', {
-      email
+    email
   },{ headers: authHeader() });
   return response.data.data;
 });

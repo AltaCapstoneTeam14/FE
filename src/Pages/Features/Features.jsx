@@ -1,6 +1,5 @@
 import Navbar from '../../Components/Navbar/Navbar'
 import { Container, Button, Form } from "react-bootstrap";
-
 import "../Features/Features.css"
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";

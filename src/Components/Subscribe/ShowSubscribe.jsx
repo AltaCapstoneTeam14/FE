@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+// import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSubscribe, subscribeSelectors, deleteSubscribe } from "../../features/SubscribeSlice"
 import { Button } from 'react-bootstrap';
@@ -15,8 +16,6 @@ const ShowSubscribe = () => {
     dispatch(getSubscribe())
   }, [dispatch]) 
 
-  
-
   return (
     <div>
       <div>
@@ -25,6 +24,9 @@ const ShowSubscribe = () => {
       <div className='titleTop'>
         <h2>Subscribe</h2>
       </div>
+      {/* <div className='btnQuota'>
+      <Link to="add"><Button variant="success">Add New</Button></Link>
+      </div> */}
       <div className='ShowTopUp'>
         <table>
           <thead>
