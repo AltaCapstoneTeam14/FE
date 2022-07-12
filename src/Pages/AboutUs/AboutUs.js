@@ -2,79 +2,164 @@ import React from 'react'
 import Footer from "../../Components/Footer/Footer"
 import Navbar from '../../Components/Navbar/Navbar'
 import '../AboutUs/AboutUs.css'
-import rocket from '../../Images/Group.svg'
-import idea from '../../Images/Group-2.svg'
-import young from '../../Images/young.svg'
+import rocket from '../../Images/rocket.png'
+import idea from '../../Images/idea.png'
+import young from '../../Images/young.png'
 import bussiness from '../../Images/bussiness.svg'
 import p360 from '../../Images/360.svg'
+import memb from '../../Images/member.png'
+import { Card, Col, Container, Row } from 'react-bootstrap'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
+import 'swiper/components/navigation/navigation.min.css'
+import 'swiper/components/pagination/pagination.min.css'
+import 'swiper/components/scrollbar/scrollbar.min.css'
+
+
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
 
 function AboutUs() {
     return (
+
         <div>
-            <div className='bodyAbout'>
-            <Navbar/>
-            <div className='title'>
-            <h1>About Us</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
-            </div>
-            <div className='solutions'>
-                <div className='solutionTexts'>
-                <h1>We Help To Get Solutions</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                <div className='colTeam'>
-                    <div className='ourTeam'>
-                        <img src={rocket} alt="rocket"></img>
-                        <div>
-                            <h2>Lorem Ipsum</h2>
-                            <p>Lorem Ipsum is simply dummy text the printing and typesetting industry.</p>
+            
+            <Navbar />
+            <Container className='about'>
+               <Row className='title'>
+                <h1>About Us</h1>
+                <h3>Bishapay Build an ecosystem and payment platform as well as financial services that suit the needs of the middle class/aspirants in Indonesia.</h3>
+               </Row>
+                <Row className='solutionsContainer'>
+                    <Col className='solutions'>
+                        <h1>We Help To Get Solutions</h1>
+                        <p>Encouraging financial inclusion and economic inclusion to encourage national economic growth.</p>
+                        <div className='rocket'>
+                            <Col className='payContainer' >
+                                <><img src={rocket} className='valuesContent' /></>
+                                <Col><h3>Rocket Pay</h3>
+                                    <p>Inisiatif untuk mensejahterahkan masyarakat Indonesia melalui perluasan akses keuangan digital di berbagai aspek.</p></Col>
+
+                            </Col>
+                            <Col className='payContainer'>
+                                <img src={idea} className='valuesContent2'/>
+                                <Col><h3>Cermat Pay</h3>
+                                    <p>Bishapay merupakan pembayaransecara online sehingga fleksibel untuk pembayaran apapun.</p></Col>
+
+
+                            </Col>
                         </div>
+
+                    </Col>
+                    <div className='young'>
+                        <img src={young} />
                     </div>
-                    <div className='ourTeams'>
-                        <img src={idea} alt="idea"></img>
-                        <div>
-                            <h2>Lorem Ipsum</h2>
-                            <p>Lorem Ipsum is simply dummy text the printing and typesetting industry.</p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div className='imageYoung'>
-                <img src={young} alt="young"></img>
-                </div>
-            </div>
-            <div className='btnOurTeam'>
-            <button>Our Team </button>
-            </div>
-            <div className='ourValue'>
-            <h2>Our Values</h2>
-            </div>
-            <div className='ourValues'>
-                <div className='side'>
-                    <img src={bussiness} alt="bussiness" className='busy'/>
-                </div>
-                <div >
-                    <div className='values'>
-                        <img src={rocket} alt="rocket2"></img>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    </div>
-                    <div className='values'>
-                        <img src={idea} alt="idea2"></img>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    </div>
-                    <div className='values'>
-                        <img src={p360} alt="p360"></img>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <Footer></Footer>
+                </Row>
+                <Row>
+                    <Col className='ourValues'>
+                        <h2 className='tagline'>Our Values</h2>
+                        <img src={bussiness} />
+                    </Col>
+                    <Col>
+                        <Row className='valuesContent'>
+                            <img src={rocket} className='icons' />
+                            <Col><p>Bergabunglah bersama kami untuk menjadi bagian dari bishapay</p></Col>
+                        </Row>
+                        <Row className='valuesContent'>
+                            <><img src={idea} className='icons' /></>
+                            <Col><p>Kami terus membangun ekosistem
+                                untuk memudahkan para pengguna,
+                                terutama untuk pembayaran kebutuhan
+                                esensial harian</p></Col>
+                        </Row>
+                        <Row className='valuesContent'>
+                            <><img src={p360} className='icons' /></>
+                            <Col><p>Kami berbeda dengan yang lain
+                                sehingga bishapay menjadi pilihan
+                                terbaik buat kamu.</p></Col>
+                        </Row>
+
+                    </Col>
+                </Row>
+                <h2 className='tagline'>Our Team</h2>
+                <Row className='ourTeamContainer'>
+                    <Swiper
+                        spaceBetween={50}
+                        slidesPerView={4}
+                        navigation
+                        //pagination = {{ clickable: true}}
+                        //scrollbar = {{ draggable: true }}
+                        onSlideChange={() => console.log('slide change')}
+                        onSwiper={(swiper) => console.log(swiper)}
+                    >
+
+
+
+                        {member.map(data => {
+                            return (
+                                <SwiperSlide key={data.id}>
+                                    <div className='ourTeam'>
+                                        <img src={memb} className='img' />
+                                        <p className='name'>{data.nama}</p>
+                                    </div>
+
+                                </SwiperSlide>
+                            )
+                        })}
+
+                    </Swiper>
+                </Row>
+            </Container>
+            <Footer />
         </div>
 
     )
 }
 
 
+const member = [
+    {
+        id: 1,
+        nama: "Stephanus Dhimas"
+    },
+    {
+        id: 2,
+        nama: "Rizaq Afani"
+    },
+    {
+        id: 3,
+        nama: "Hamid Baehaqi"
+    },
+    {
+        id: 4,
+        nama: "Dhivas Dharma"
+    },
+    {
+        id: 5,
+        nama: "Amal Nur"
+    },
+    {
+        id: 6,
+        nama: "Alfi Arissandi"
+    },
+    {
+        id: 7,
+        nama: "Andira Azzahra"
+    },
+    {
+        id: 8,
+        nama: "Ghina Faraj Wati"
+    },
+    {
+        id: 9,
+        nama: "Juliana Damayanti"
+    },
+    {
+        id: 10,
+        nama: "Stephanus Dhimas"
+    }
+]
 
 export default AboutUs

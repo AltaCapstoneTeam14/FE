@@ -1,174 +1,114 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Nunito:wght@500&family=Poppins:wght@600&family=Red+Hat+Display:wght@700&family=Roboto:wght@300;500;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
+
+.about  {
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
 }
-.bodyAbout{
+.title{
+    text-align: center;
+    margin: 4rem auto;
+}
+.title h3{
+    font-weight: 400;
+    font-size: 20px;
+    padding: 10px 0;
+}
+.title h1{
+    font-weight: 700;
+    font-size: 64px;
+    color: #605CFF;
+}
+
+.solutionsContainer{
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     margin: auto;
 }
-.title{
-    margin: auto;
-    padding: 40px;
-    display: block;
-    width: 1200px;
-    text-align: center;
-    align-items:center;
-    position:relative;
-}
-
-.title h1{
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: 700;
-    color:#322fff;
-    font-size: 60px;
-    align-items:center;
-    position:relative;
-    margin-top: 20px;
-}
-.title p{
-    margin: auto;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 500;
-    color: #626262;
-    margin-top: 20px;
-    width:60%;
-    font-size: 22px;
-}
-
-.solutions{
-    display: flex;
-    width: 90%;
-    margin: auto;
-    margin-top: 40px;
-}
 .solutions h1{
     font-size: 36px;
-    font-family: 'Poppins', sans-serif;
-    margin-left: 40px;
-    margin-top: 100px;
+    font-weight: 500;
 }
-.solutionTexts{
-    width: 70%;
-}
-.solutionTexts p{
-    width: 60%;
-    margin-top: 7%;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-    margin-left: 40px;
-}
-.colTeam{
-    display: flex;
-    margin-left: 40px;
-}
-.ourTeam{
-    display: flex;
-    margin: 7% 0 ;
-    width: 88%;
-    
-}
-.ourTeam img{
-    width: 80px;
-    height: 80px;
-    margin-top: 10px;
-}
-.ourTeam h2{
-    font-size: 27px;
-    font-family: 'Poppins', sans-serif;
-    margin-left: 30px;
-    margin-top: -20px;
-}
-.ourTeam p{
-    width: 50%;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    margin-left: 30px;
-}
-.ourTeams{
-    display: flex;
-    margin: 7% 0 ;
-    margin-left: -100px;
-    width: 90%;
-    margin: auto;
-    
-}
-.ourTeams img{
-    width: 80px;
-    height: 80px;
-}
-.ourTeams h2{
-    font-size: 27px;
-    font-family: 'Poppins', sans-serif;
-    margin-left: 30px;
-    margin-top: -20px;
-}
-.ourTeams p{
-    width: 50%;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    margin-left: 30px;
-}
-
-button{
-    padding:20px 50px;
-    text-align: left;
-    border-radius:20px;
-    background: #605CFF;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 3px 20px 20px -11px rgba(117,166,146,0.78);
-    -webkit-box-shadow: 3px 26px 33px -11px rgba(117,166,146,0.78);
-    -moz-box-shadow: 3px 26px 33px -11px rgba(117,166,146,0.78);
-}
-
-.ourValues{
-    display: flex;
-    justify-content: space-between;
-}
-.side img {
-    width: 550px;
-    height: 550px;
-}
-.busy{
-    width: 740px;
-    height: 494px;
-}
-.values{
-    display: flex;
-    justify-content: space-between;
-    padding: 40px;
-}
-.values img{
-    width: 70px;
-    height: 70px;
-    padding: 10px;
-    margin-left: 70px;
-}
-.values p{
-    width: 70%;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-}
-.imageYoung img{
-    width: 400px;
-    height: 400px;
-    margin-top: 90px;
-}
-.btnOurTeam {
-    margin-left: 100px;
-    
-}
-.btnOurTeam button{
-    border-style: none;
-    border:none;
-}
-.ourValue h2 {
+.tagline{
+    color: #605CFF;
     font-weight: 600;
-    margin-top: 150px;
-    margin-left: 50px;
+    font-size: 28px;
+}
+.solutions{
+    width: 65%;
+}
+.solutions p{
+    width: 90%;
+}
+.young{
+    width: 35%;
+    align-items: center;
+}
+.young img{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.rocket{
+    
+    display: flex;
+    justify-content: space-between;
+}
+.payContainer{
+    display: flex;
+    max-width: 100%;
+}
+.payContainer img{
+    width: 30%;
+    height: 40%;
+    padding: 10px;
+}
+.ourValues img{
+    width: 90%;
+    height: 90%;
+}
+.icons{
+    width: 15%;
+}
+.valuesContent{
+    padding: 20px;
+    margin: 20px 0;
+}
+.valuesContent2{
+    padding: 20px;
+    
+}
+.ourTeamContainer{
+    display: flex;
+    overflow-x: scroll;
+    position:relative;
+    overflow-y: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px;
+}
+
+.ourTeam{
+    margin: 20px 22px ;
+}
+.name{
+    position: relative;
+    padding: 10px;
+    width: 50%;
+    border: 1px black solid;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: -20px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    margin: -25px auto 0 auto;
+    font-size: 16px;
+    text-align: center;
+}
+.img{
+    border-radius: 10px;
 }
