@@ -21,9 +21,9 @@ import EditCashOut from "./Components/CashOut product/EditCashOut";
 import AddCashOut from "./Components/CashOut product/AddCashOut";
 import PrivateRoute from "./Components/Private/PrivateRoute";
 import SubscribePage from "./Pages/SubscribePage/SubscribePage";
-import Loading from "./Components/Loading/Loading"
 import AdminPage from "./Pages/Admin Page/AdminPage";
 import EditAdmin from "./Components/Admin/EditAdmin";
+import Logout from "./Pages/Logout/logout";
 
 function App() {
   return (
@@ -89,7 +89,7 @@ function App() {
 
             <Route path="/SubscribePage" element={<SubscribePage />}></Route>
 
-            <Route path="/Loading" element={<Loading />}></Route>
+            <Route path="/Logout" element={<Logout />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

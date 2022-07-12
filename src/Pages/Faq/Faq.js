@@ -5,16 +5,25 @@ import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import { BsFillArrowDownSquareFill } from "react-icons/bs";
 import FaqImg from "../../Images/FaqImg.png";
 import Navbar from "../../Components/Navbar/Navbar";
+import authService from "../../Services/auth-services";
+import NavAdmin from "../../Components/Navbar/NavAdmin";
 
 
 function Faq() {
   const [selected, setSelected] = useState(null);
+  const user = authService.getCurrentUser();
+  let auth = false
+  if (user) {
+    auth = true
+  }
   const toggle = (i) => {
     if (selected === i) {
       return setSelected(null);
     }
     setSelected(i);
   };
+  
+      
 
   const data = [
     {
@@ -51,7 +60,13 @@ function Faq() {
   
   return (
     <>
-      <Navbar/>
+      {
+          auth ? (
+            <NavAdmin/>
+          ) : (
+            <Navbar/>
+          )
+        }
       <div className="headerFaq">
         <h1 className="faq">FAQ</h1>
         <p>

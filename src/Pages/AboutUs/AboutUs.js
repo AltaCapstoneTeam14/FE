@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Footer from "../../Components/Footer/Footer"
 import Navbar from '../../Components/Navbar/Navbar'
 import '../AboutUs/AboutUs.css'
@@ -7,13 +7,26 @@ import idea from '../../Images/Group-2.svg'
 import young from '../../Images/young.svg'
 import bussiness from '../../Images/bussiness.svg'
 import p360 from '../../Images/360.svg'
+import authService from '../../Services/auth-services'
+import NavAdmin from '../../Components/Navbar/NavAdmin'
 
 
 function AboutUs() {
+    const user = authService.getCurrentUser();
+    let auth = false
+      if (user) {
+        auth = true
+      }
     return (
         <div>
             <div className='bodyAbout'>
-            <Navbar/>
+            {
+                auth ? 
+                    <NavAdmin/>
+                 : 
+                    <Navbar/>
+                
+            }
             <div className='title'>
             <h1>About Us</h1>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>

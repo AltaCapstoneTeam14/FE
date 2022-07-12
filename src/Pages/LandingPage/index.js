@@ -18,12 +18,21 @@ import { BsChevronRight } from "react-icons/bs";
 // components
 import Footer from "../../Components/Footer/Footer"
 import Navbar from "../../Components/Navbar/Navbar";
+import NavAdmin from "../../Components/Navbar/NavAdmin";
+import authService from "../../Services/auth-services";
 
 function LandingPage() { 
+  const user = authService.getCurrentUser();
+    let auth = false
+    if (user) {
+      auth = true
+    }
   return (
     <div>
       <div>
-        <Navbar/>
+        {
+          auth ? <NavAdmin/> : <Navbar/>
+        }
         {/* HERO SECTION */}
         <Container>
           <Row>

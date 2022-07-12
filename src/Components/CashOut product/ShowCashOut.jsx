@@ -7,14 +7,23 @@ import "./ShowCashOut.css"
 import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import NavAdmin from '../Navbar/NavAdmin'
+import jwtDecode from 'jwt-decode';
 
 const ShowCashOut = () => {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState('')
   const cashout = useSelector(cashOutSelectors.selectAll);
+  const user = JSON.parse(localStorage.getItem("user"));
+  const decode = jwtDecode(user.data.token)
 
   useEffect(() => {
     dispatch(getCashOut())
+    console.log(user.data.token)
+    if(Date.now() >= decode.exp * 1000){
+      console.log("trues")
+    }else{
+      console.log("false")
+    }
   }, [dispatch]) 
 
   return (

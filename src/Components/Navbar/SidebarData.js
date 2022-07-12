@@ -4,6 +4,7 @@ import * as AiIcons from 'react-icons/ai'
 import * as FaIcons from 'react-icons/fa'
 import * as RiIcons from "react-icons/ri"
 import * as MdIcons from "react-icons/md"
+import * as FiIcons from "react-icons/fi"
 
 
 export const SidebarData = [
@@ -43,4 +44,10 @@ export const SidebarData = [
            icon: <RiIcons.RiAdminFill />,
            cName: "nav-text",
          },
+         {
+          title: "Logout",
+          path: "/Logout",
+          icon: <FiIcons.FiLogOut />,
+          cName: "nav-text",
+        },
        ];
