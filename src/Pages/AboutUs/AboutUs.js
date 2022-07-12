@@ -4,11 +4,10 @@ import Navbar from '../../Components/Navbar/Navbar'
 import '../AboutUs/AboutUs.css'
 import rocket from '../../Images/rocket.png'
 import idea from '../../Images/idea.png'
-import young from '../../Images/young.png'
 import bussiness from '../../Images/bussiness.svg'
 import p360 from '../../Images/360.svg'
 import memb from '../../Images/member.png'
-import { Card, Col, Container, Row } from 'react-bootstrap'
+import {  Col, Container, Row } from 'react-bootstrap'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/swiper-bundle.min.css'
@@ -16,14 +15,15 @@ import 'swiper/swiper.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/scrollbar/scrollbar.min.css'
+import authService from '../../Services/auth-services'
+import NavAdmin from '../../Components/Navbar/NavAdmin'
+
 
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
 
-import authService from '../../Services/auth-services'
-import NavAdmin from '../../Components/Navbar/NavAdmin'
-import team1 from '../../Images/team1.png'
+
 
 
 function AboutUs() {
