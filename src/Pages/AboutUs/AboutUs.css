@@ -56,34 +56,24 @@
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
     margin-left: 40px;
+    margin-bottom: 50px;
 }
 .colTeam{
     display: flex;
     margin-left: 40px;
 }
-.ourTeam{
+.ourTeam {
     display: flex;
-    margin: 7% 0 ;
     width: 88%;
+    margin-top: -50px;
+    margin-bottom: 70px;
     
-}
-.ourTeam img{
-    width: 80px;
-    height: 80px;
-    margin-top: 10px;
 }
 .ourTeam h2{
     font-size: 27px;
     font-family: 'Poppins', sans-serif;
     margin-left: 30px;
     margin-top: -20px;
-}
-.ourTeam p{
-    width: 50%;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    margin-left: 30px;
 }
 .ourTeams{
     display: flex;
@@ -142,10 +132,10 @@ button{
     padding: 40px;
 }
 .values img{
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     padding: 10px;
-    margin-left: 100px;
+    margin-left: 80px;
     margin-right: 20px;
 }
 .values p{
@@ -173,4 +163,43 @@ button{
     margin-top: 100px;
     margin-left: 100px;
     color: blue;
+}
+.ourTeam h2 {
+    font-weight: 600;
+    margin-top: 100px;
+    margin-left: 100px;
+    color: blue;
+}
+.groupTeam {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 120px;
+}
+.groupTeamImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 20px;
+}
+.groupTeamImg img{
+    width: 240px;
+    height: 290px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.groupTeamImg p {
+    padding: 8px 60px;
+    width: 0px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    font-size: 14px;
+    border-radius: 10px;  
+    margin-top: -30px;  
+    box-shadow: -1px 5px 6px -1px rgba(0,0,0,0.37);
+    -webkit-box-shadow: -1px 5px 6px -1px rgba(0,0,0,0.37);
+    -moz-box-shadow: -1px 5px 6px -1px rgba(0,0,0,0.37);
 }

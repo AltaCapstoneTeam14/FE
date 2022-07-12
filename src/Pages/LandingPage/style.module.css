@@ -43,6 +43,7 @@
     margin: 3rem;
     margin-left: 12rem;
     box-shadow: 10px 10px 20px 0 #00000067;
+    position: static;
 }
 .columnLoyaltyPoint {
     margin-left: 5rem;

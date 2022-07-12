@@ -179,17 +179,7 @@ function LandingPage() {
             <Col>
               <img
                 src={computer}
-                style={{ zIndex: "2", position: "relative" }} alt="computer"
-              />
-              <img
-                src={purpleShadow}
-                style={{
-                  zIndex: "1",
-                  position: "absolute",
-                  marginTop: "-15rem",
-                  marginLeft: "-40rem",
-                }}
-                alt="purpleShadow"
+                style={{ zIndex: "2", position: "static", }} alt="computer"
               />
             </Col>
 
