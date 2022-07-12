@@ -1,0 +1,88 @@
+.ShowTopUp {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+table {
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgb(210, 210, 210);
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+thead {
+    box-shadow: 0 5px 10px rgb(210, 210, 210);
+}
+th {
+    padding: 16px 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 900;
+}
+td {
+    padding: 16px 5px;
+}
+tr:nth-child(even){
+    background-color: rgb(238, 238, 238);
+}
+.btnDelete {
+    margin-left: 10px;
+}
+.thNo {
+    padding-left: 30px;
+}
+.tdnumber {
+    padding-left: 30px;
+}
+.thAct {
+    padding-right: 50px;
+}
+.titleTop {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.titleTop h2 {
+    font-weight: 700;
+    color: blue;
+    letter-spacing: 3px;
+}
+.btnadd Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnCash {
+    display: flex;
+    justify-content: center;
+    margin-left: 110px;
+    font-size: 10px;
+    margin-top: 10px;
+}
+.btnTop Button {
+    font-size: 15px;
+}
+.searchCashout input{
+    padding: 7px;
+    width: 300px;
+    border: none;
+    border-bottom: 1.5px solid black;
+    margin-left: 445px;
+    margin-top: 7px;
+}
+.searchCashout input::placeholder {
+    color: black;
+    font-size: 17px;
+}
+.cashoutSearch {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

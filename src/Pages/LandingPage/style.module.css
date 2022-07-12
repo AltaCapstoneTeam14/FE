@@ -6,20 +6,23 @@
 
 .tagline {
     margin-top: 7rem;
-    width: 80%;
+    width: 70%;
     font-weight: 400;
     line-height: 1.4;
+    font-weight: 500;
+    margin-left: 20px;
 }
 .tagline span {
     color: #605CFF;
-    font-weight: 600;
+    font-weight: 700;
+    margin: 0;
 }
 
 .button {
     border-radius: 20px;
     background-color: #605CFF !important;
     padding: 12px 20px;
-    margin-left: 30px;
+    margin-left: 50px;
     margin-top: 20px;
     font-size: 14px;
     font-weight: 600;
@@ -38,74 +41,15 @@
     height: 270px !important;
     text-align: center !important;
     margin: 3rem;
-    margin-left: 8rem;
+    margin-left: 12rem;
     box-shadow: 10px 10px 20px 0 #00000067;
-    
-    
+    position: static;
 }
-
 .columnLoyaltyPoint {
     margin-left: 5rem;
 }
-
 .teksLoyaltyPoint {
     color: #7C7C7C;
-}
-
-.box {
-    background-image: linear-gradient(to right, #407BFF, #1D1C4B);
-    width: 950px;
-    height: 160px;
-    border-radius: 20px;
-    display: flex;
-    margin: auto;
-    margin-bottom: 150px;
-}
-.box img {
-    margin-left: 4rem;
-    margin-top: 2rem;
-    width: 90px;
-    height: 90px;
-}
-.box p {
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 60px;
-    margin-left: 30px;
-}
-
-.form {
-    background-color: white;
-    width: 450px;
-    height: 50px;
-    border-radius: 50px;
-    margin: auto;
-    margin-left: 30px;
-  
-}
-
-.inputEmail {
-    margin-top: 12px;
-    margin-left: 18px;
-    border: none;
-    font-size: 14px;
-}
-
-.subscribeButton {
-    background-color: #407BFF;
-    border: none;
-    font-size: 14px;
-    color: white;
-    font-weight: bolder;
-    width: 120px;
-    height: 40px;
-    border-radius: 30px;
-    margin-top: -30px;
-    margin-left: 325px;
-    padding-top: 10px;
-    padding-left: 1.3rem;
-    display: flex;
 }
 .imageLanding img{
     width: 400px;
@@ -117,6 +61,7 @@
     width: 460px;
     height: 380px;
     margin-top: -20px;
+    margin-left: 5px;
 }
 .imageLanding3 img {
     width: 510px;
@@ -138,11 +83,13 @@
     font-size: 14px;
     color: gray;
     width: 450px;
+    margin-left: 15px;
 }
 .paragraphTitle {
     margin-top: 20px;
     font-size: 14px;
     color: gray;
+    margin-left: 20px;
 }
 .titleLanding2 {
     margin-left: 30px;
@@ -152,6 +99,7 @@
     color: #C4C4C4;
     font-size: 14px;
     font-weight: bold;
+    margin-left: 15px;
 }
 .landingHeader2 {
     width: 80%;
@@ -162,6 +110,7 @@
     width: 80%;
     font-weight: 400;
     line-height: 1.5;
+    margin-left: 15px;
 }
 
 .ourProducts {
@@ -180,12 +129,4 @@
 .loyaltyPoint span {
     font-size: 22px;
     color: #605CFF;
-}
-.frequently {
-    font-size: 30px;
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 80px;
-    margin-top: 100px;
-    color: #407BFF;
 }

@@ -21,10 +21,21 @@ import 'swiper/components/scrollbar/scrollbar.min.css'
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
 
+import authService from '../../Services/auth-services'
+import NavAdmin from '../../Components/Navbar/NavAdmin'
+import team1 from '../../Images/team1.png'
+
+
 function AboutUs() {
+    const user = authService.getCurrentUser();
+    let auth = false
+      if (user) {
+        auth = true
+      }
     return (
 
         <div>
+
             
             <Navbar />
             <Container className='about'>
@@ -51,13 +62,19 @@ function AboutUs() {
 
                             </Col>
                         </div>
-
                     </Col>
-                    <div className='young'>
-                        <img src={young} />
-                    </div>
                 </Row>
-                <Row>
+            <div className='bodyAbout'>
+            {
+                auth ? 
+                    <NavAdmin/>
+                 : 
+                    <Navbar/>
+                
+            }
+            </div>
+            
+                 <Row>
                     <Col className='ourValues'>
                         <h2 className='tagline'>Our Values</h2>
                         <img src={bussiness} />
@@ -113,6 +130,9 @@ function AboutUs() {
                 </Row>
             </Container>
             <Footer />
+
+        <Footer></Footer>
+
         </div>
 
     )

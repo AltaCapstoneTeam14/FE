@@ -5,44 +5,53 @@ import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import { BsFillArrowDownSquareFill } from "react-icons/bs";
 import FaqImg from "../../Images/FaqImg.png";
 import Navbar from "../../Components/Navbar/Navbar";
+import authService from "../../Services/auth-services";
+import NavAdmin from "../../Components/Navbar/NavAdmin";
 
 
 function Faq() {
   const [selected, setSelected] = useState(null);
+  const user = authService.getCurrentUser();
+  let auth = false
+  if (user) {
+    auth = true
+  }
   const toggle = (i) => {
     if (selected === i) {
       return setSelected(null);
     }
     setSelected(i);
   };
+  
+      
 
   const data = [
     {
-      question: "Question 1",
+      question: "Bagaimana cara mengisi saldo BishaPay?",
       title: "Simply dummy text?",
       answer:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      question: "Question 2",
+      question: "Apa itu BishaPay?",
       title: "Simply dummy text?",
       answer:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      question: "Question 3",
+      question: "Fitur-fitur BishaPay?",
       title: "Simply dummy text?",
       answer:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      question: "Question 4",
+      question: "Apa saja media sosial BishaPay",
       title: "Simply dummy text?",
       answer:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      question: "Question 5",
+      question: "Customer Service BishaPay?",
       title: "Simply dummy text?",
       answer:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -51,7 +60,13 @@ function Faq() {
   
   return (
     <>
-      <Navbar/>
+      {
+          auth ? (
+            <NavAdmin/>
+          ) : (
+            <Navbar/>
+          )
+        }
       <div className="headerFaq">
         <h1 className="faq">FAQ</h1>
         <p>

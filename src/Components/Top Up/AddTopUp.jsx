@@ -8,6 +8,7 @@ import { Form } from "react-bootstrap";
 import "./AddTopUp.css"
 
 const AddTopUp = () => {
+  const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
   const [gross_amount, setGross_amount] = useState('');
   const dispatch = useDispatch();
@@ -15,17 +16,29 @@ const AddTopUp = () => {
 
   const createTopUp = (e) => {
     e.preventDefault();
-    dispatch(saveTopUp({ amount, gross_amount}));
+    dispatch(saveTopUp({ name, amount, gross_amount}));
     navigate('/TopUpPage');
   }
 
   return (
     <div>
-      <Card className="cardEdit">
+      <Card className="cardTop">
       <Card.Body>
         <h3>Add Data</h3>
         <hr></hr>
         <Form onSubmit={createTopUp}>
+        <div className="inputEdit">
+          <label>Name</label>
+          <div>
+            <input 
+            type="text" 
+            className="input" 
+            placeholder="Name" 
+            value={name} 
+            onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+        </div>
         <div className="inputEdit">
           <label>Amount</label>
           <div>

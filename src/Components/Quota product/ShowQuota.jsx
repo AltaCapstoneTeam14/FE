@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { getQuotas, quotaSelectors, deleteQuota } from "../../features/QuotaSlice"
 import { Link } from 'react-router-dom';
@@ -6,12 +6,11 @@ import { Button } from 'react-bootstrap';
 import "./ShowQuota.css"
 import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin5Fill } from "react-icons/ri";
-
-// import NavAdmin from '../Navbar/NavAdmin'
+import NavAdmin from '../Navbar/NavAdmin'
 
 const ShowQuota = () => {
   const dispatch = useDispatch();
-
+  const [searchTerm, setSearchTerm] = useState('')
   const quotas = useSelector(quotaSelectors.selectAll);
 
   useEffect(() => {
@@ -21,21 +20,28 @@ const ShowQuota = () => {
   return (
     <div>
       <div>
-      {/* <NavAdmin/> */}
+      <NavAdmin/>
       </div>
       <div className='titleTop'>
-        <h2>Pulsa Product</h2>
+        <h2>Quota Product</h2>
       </div>
-      <div className='btnPulsa'>
-      <Link to="add"><Button variant="success">Add New</Button></Link>
-      </div>
+      <div className='quotaSearch'>
+        <div className='searchQuota'>
+          <input type="text" placeholder="Search . . ." onChange={e => {setSearchTerm(e.target.value)}}></input>
+        </div>
+        <div className="btnQuota">
+          <Link to="add">
+            <Button variant="success">Add New</Button>
+          </Link>
+        </div>
+        </div>
       <div className='ShowTopUp'>
         <table>
           <thead>
             <tr>
               <th className="thNo">No</th>
               <th>Name</th>
-              <th>Description</th>
+              <th className='thdesc'>Description</th>
               <th>Stock</th>
               <th>Provider Id</th>
               <th>Gross Amount</th>
@@ -45,7 +51,15 @@ const ShowQuota = () => {
           </thead>
           <tbody>
             {
-              quotas.map((quota, index) => (
+              quotas.filter((quota) => {
+                if (searchTerm === "") {
+                  return quota
+                } else if (quota.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                  return quota
+                } else {
+                  return null
+                }
+              }).map((quota, index) => (
                 <tr key={quota.id}>
                   <td className="tdnumber">{index + 1}</td>
                   <td>{quota.name}</td>

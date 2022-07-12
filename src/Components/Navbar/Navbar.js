@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
-import jwt_decode from "jwt-decode";
 import authService from '../../Services/auth-services';
+import Loading from '../Loading/Loading';
 
 function Navbar() {
     const navigate = useNavigate();
@@ -11,47 +11,50 @@ function Navbar() {
     }
 
     const [currentUser, setCurrentUser] = useState(undefined);
-
+    const [loading, setLoading] = useState(false)
     const logOut = () => {
+        setLoading(true)
         authService.logout();
         window.location.reload();
+        setLoading(false)
       };
 
   useEffect(() => {
     const user = authService.getCurrentUser();
-    const currentDate = new Date()
 
     if (user) {
-        const decoded = jwt_decode(user.data.token)
-      console.log(decoded.exp * 1000)
-      console.log(currentDate.getTime() - decoded.exp * 1000)
       setCurrentUser(user);
     }
   }, []);
 
   return (
-        <>
-        <NavbarContainer>
-            <Logo href='/'>Bishapay</Logo>
-            <Menu>
-                <MenuLink href='/'>Home</MenuLink>
-                <MenuLink href='aboutUs'>About Us</MenuLink>
-                <MenuLink href='product'>Product</MenuLink>
-                <MenuLink href='faq'>FAQ</MenuLink>
-            </Menu>
-            {
-                currentUser ? (
-                    <LoginButton type='button' onClick={logOut}>Log Out</LoginButton>
-                ) : (
-                    <LoginButton type='button' onClick={navigateToLogin}>Log In</LoginButton>
-                )
-            }
-            
-        </NavbarContainer>
-
-       
-
-        </>
+    <>
+    {
+        loading ? (
+            <Loading/>
+          ) : (
+            <>
+            <NavbarContainer>
+                <Logo href='/'>Bishapay</Logo>
+                <Menu>
+                    <MenuLink href='/'>Home</MenuLink>
+                    <MenuLink href='aboutUs'>About Us</MenuLink>
+                    <MenuLink href='features'>Features</MenuLink>
+                    <MenuLink href='faq'>FAQ</MenuLink>
+                </Menu>
+                {
+                    currentUser ? (
+                        <LoginButton type='button' onClick={logOut}>Log Out</LoginButton>
+                    ) : (
+                        <LoginButton type='button' onClick={navigateToLogin}>Log In</LoginButton>
+                    )
+                }
+                
+            </NavbarContainer>
+            </>
+          )
+    }
+       </>
   )
 }
 

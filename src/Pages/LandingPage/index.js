@@ -1,6 +1,6 @@
-import React from "react";
 import style from "./style.module.css";
-import { Container, Button, Row, Col, Card, CardGroup,} from "react-bootstrap";
+import { Container, Button, Row, Col, Card, CardGroup } from "react-bootstrap";
+import React from "react";
 
 // images
 import image1 from "../../Images/images-1.png";
@@ -11,22 +11,28 @@ import coins from "../../Images/Coins three.svg";
 import walletCard from "../../Images/Wallet Cards.svg";
 import computer from "../../Images/computer.png";
 import purpleShadow from "../../Images/Ellipse 12.png";
-import news from "../../Images/news 1.png"
 // icons
 import { GoPrimitiveDot } from "react-icons/go";
 import { BsChevronRight } from "react-icons/bs";
-import { BsChevronDown } from "react-icons/bs";
 
 // components
 import Footer from "../../Components/Footer/Footer"
 import Navbar from "../../Components/Navbar/Navbar";
+import NavAdmin from "../../Components/Navbar/NavAdmin";
+import authService from "../../Services/auth-services";
 
-function LandingPage() {
-  
+function LandingPage() { 
+  const user = authService.getCurrentUser();
+    let auth = false
+    if (user) {
+      auth = true
+    }
   return (
     <div>
       <div>
-        <Navbar/>
+        {
+          auth ? <NavAdmin/> : <Navbar/>
+        }
         {/* HERO SECTION */}
         <Container>
           <Row>
@@ -71,10 +77,7 @@ function LandingPage() {
               </h2>
               <div className={style.paragraphLanding}>
               <p>
-                Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et.
-                Sunt qui esse pariatur duis deserunt mollit dolore cillum minim
-                tempor enim. Elit aute irure tempor cupidatat incididunt sint
-                deserunt ut voluptate aute id deserunt nisi.
+                Get convenience in every transaction with the bishapay loyalty program. bishapay is a customer loyalty management solutions provider committed to providing the most comprehensive range of customer retention and engagement solutions.
               </p>
               </div>
             </Col>
@@ -176,22 +179,12 @@ function LandingPage() {
             <Col>
               <img
                 src={computer}
-                style={{ zIndex: "2", position: "relative" }} alt="computer"
-              />
-              <img
-                src={purpleShadow}
-                style={{
-                  zIndex: "1",
-                  position: "absolute",
-                  marginTop: "-15rem",
-                  marginLeft: "-40rem",
-                }}
-                alt="purpleShadow"
+                style={{ zIndex: "2", position: "static", }} alt="computer"
               />
             </Col>
 
             <Col className={style.columnLoyaltyPoint}>
-              <h3 className={style.loyaltyPoint}> Loyalty Point <span> By Bishapay </span> </h3>
+              <h3 className={style.loyaltyPoint}> Loyalty Point <br></br><span style={{marginLeft: "0px"}}> By Bishapay </span> </h3>
               <p className={style.teksLoyaltyPoint}>
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
@@ -199,25 +192,6 @@ function LandingPage() {
               </p>
             </Col>
           </Row>
-        </Container>
-
-        {/* FAQ SECTION */}
-        <Container>
-          <div className={style.frequently}>
-            <h3>Frequently asked questions <BsChevronDown style={{ marginLeft: "2rem" }} /></h3>
-          </div>
-
-          <div className={style.box}>
-            <img src={news} alt="news"/>
-            <p>Subcribe to our Newsletter</p>
-
-            <div className={style.form}>
-              <input className={style.inputEmail} type="text" placeholder="Enter Email Address"></input>
-              <button className={style.subscribeButton}>
-                Subscribe
-              </button>
-            </div>
-          </div>
         </Container>
       </div>
       <Footer />
