@@ -14,9 +14,9 @@ export const saveSubscribe = createAsyncThunk("subscribe/saveSubscribe", async (
   return response.data.data;
 });
 
-export const deleteSubscribe = createAsyncThunk("subscribe/deleteSubscribe", async (id) => {
-    await axios.delete(`http://44.201.153.46:8081/api/v1/subscribers/${id}` , { headers: authHeader()}) ;
-    return id;
+export const deleteSubscribe = createAsyncThunk("subscribe/deleteSubscribe", async (email) => {
+    await axios.delete(`http://44.201.153.46:8081/api/v1/subscribers/${email}` , { headers: authHeader()}) ;
+    return email;
 
 });
 

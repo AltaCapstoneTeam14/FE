@@ -48,11 +48,11 @@ const ShowSubscribe = () => {
                   return null
                 }
               }).map((subscribe, index) => (
-                <tr key={subscribe.id}>
+                <tr key={subscribe.email}>
                   <td className="tdnumber">{index + 1}</td>
                   <td className='tdEmail'>{subscribe.email}</td>
                   <td>
-                    <Button onClick={() => dispatch(deleteSubscribe(subscribe.id))} variant="danger" className='px-2 py-1 ms-2'><RiDeleteBin5Fill></RiDeleteBin5Fill></Button>
+                    <Button onClick={() => dispatch(deleteSubscribe(subscribe.email))} variant="danger" className='px-2 py-1 ms-2'><RiDeleteBin5Fill></RiDeleteBin5Fill></Button>
                   </td>
                 </tr>
               ))

@@ -27,31 +27,31 @@ function Faq() {
 
   const data = [
     {
-      question: "Question 1",
+      question: "Bagaimana cara mengisi saldo BishaPay?",
       title: "Simply dummy text?",
       answer:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      question: "Question 2",
+      question: "Apa itu BishaPay?",
       title: "Simply dummy text?",
       answer:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      question: "Question 3",
+      question: "Fitur-fitur BishaPay?",
       title: "Simply dummy text?",
       answer:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      question: "Question 4",
+      question: "Apa saja media sosial BishaPay",
       title: "Simply dummy text?",
       answer:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      question: "Question 5",
+      question: "Customer Service BishaPay?",
       title: "Simply dummy text?",
       answer:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",

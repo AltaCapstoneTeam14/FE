@@ -1,7 +1,7 @@
 import Navbar from '../../Components/Navbar/Navbar'
 import { Container, Button, Form } from "react-bootstrap";
 import "../Features/Features.css"
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { saveSubscribe } from "../../features/SubscribeSlice";
 import featuresImg from '../../Images/Feature-img.png'
