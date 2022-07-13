@@ -7,7 +7,7 @@ import FaqImg from "../../Images/FaqImg.png";
 import Navbar from "../../Components/Navbar/Navbar";
 import authService from "../../Services/auth-services";
 import NavAdmin from "../../Components/Navbar/NavAdmin";
-
+import Scroll from "../../Components/Scroll/Scroll";
 
 function Faq() {
   const [selected, setSelected] = useState(null);
@@ -60,6 +60,7 @@ function Faq() {
   
   return (
     <>
+    <Scroll />
       {
           auth ? (
             <NavAdmin/>

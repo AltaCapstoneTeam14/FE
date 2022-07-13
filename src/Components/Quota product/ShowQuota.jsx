@@ -7,6 +7,7 @@ import "./ShowQuota.css"
 import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import NavAdmin from '../Navbar/NavAdmin'
+import Scroll from "../Scroll/Scroll"
 
 const ShowQuota = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const ShowQuota = () => {
       <div>
       <NavAdmin/>
       </div>
+      <Scroll />
       <div className='titleTop'>
         <h2>Quota Product</h2>
       </div>

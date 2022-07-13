@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  getAdmin,
-  adminSelectors,
-} from "../../features/AdminSlice";
+import { getAdmin, adminSelectors } from "../../features/AdminSlice";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "./ShowAdmin.css";
 import { AiFillEdit } from "react-icons/ai";
-
+import Scroll from "../Scroll/Scroll"
 import NavAdmin from "../Navbar/NavAdmin";
 
 const ShowAdmin = () => {
@@ -28,6 +25,7 @@ const ShowAdmin = () => {
       <div>
         <NavAdmin />
       </div>
+      <Scroll />
       <div className="container">
         <div className="titleTop">
           <h2>Data Admin</h2>
