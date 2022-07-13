@@ -3,12 +3,12 @@ import axios from "axios";
 import authHeader from "../Services/auth-header";
 
 export const getPulsas = createAsyncThunk("pulsa/getPulsas", async() => {
-    const response = await axios.get('http://44.201.153.46:8081/api/v1/products/pulsa', { headers: authHeader() });
+    const response = await axios.get('/api/v1/products/pulsa', { headers: authHeader() });
     return response.data.data;
 });
 
 export const savePulsa = createAsyncThunk("pulsa/savePulsa", async ({ name, denom, stock, provider_id, gross_amount, provider_name}) => {
-  const response = await axios.post('http://44.201.153.46:8081/api/v1/products/pulsa', {
+  const response = await axios.post('/api/v1/products/pulsa', {
       name,
       denom,
       stock,
@@ -20,7 +20,7 @@ export const savePulsa = createAsyncThunk("pulsa/savePulsa", async ({ name, deno
 });
 
 export const updatePulsa = createAsyncThunk("pulsas/updatePulsa", async ({ id, name, denom, stock, provider_id, gross_amount, provider_name }) => {
-  const response = await axios.put(`http://44.201.153.46:8081/api/v1/products/pulsa/${id}`, {
+  const response = await axios.put(`/api/v1/products/pulsa/${id}`, {
       name,
       denom,
       stock,
@@ -32,7 +32,7 @@ export const updatePulsa = createAsyncThunk("pulsas/updatePulsa", async ({ id, n
 });
 
 export const deletePulsa = createAsyncThunk("pulsas/deletePulsa", async (id) => {
-    await axios.delete(`http://44.201.153.46:8081/api/v1/products/pulsa/${id}` , { headers: authHeader()}) ;
+    await axios.delete(`/api/v1/products/pulsa/${id}` , { headers: authHeader()}) ;
     return id;
 
 });

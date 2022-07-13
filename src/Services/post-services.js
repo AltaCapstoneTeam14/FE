@@ -1,7 +1,7 @@
 import axios from "axios";
 import authHeader from "./auth-header";
 
-const API_URL = "http://44.201.153.46:8081/api-dev/v1";
+const API_URL = "/api/v1";
 
 // const getAllPublicPosts = () => {
 //   return axios.get(API_URL + "/public");
