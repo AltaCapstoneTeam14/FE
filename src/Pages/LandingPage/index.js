@@ -10,7 +10,6 @@ import wallet from "../../Images/Crypto Wallet.svg";
 import coins from "../../Images/Coins three.svg";
 import walletCard from "../../Images/Wallet Cards.svg";
 import computer from "../../Images/computer.png";
-import purpleShadow from "../../Images/Ellipse 12.png";
 // icons
 import { GoPrimitiveDot } from "react-icons/go";
 import { BsChevronRight } from "react-icons/bs";

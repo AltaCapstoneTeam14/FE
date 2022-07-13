@@ -7,7 +7,6 @@ import FaqImg from "../../Images/FaqImg.png";
 import Navbar from "../../Components/Navbar/Navbar";
 import authService from "../../Services/auth-services";
 import NavAdmin from "../../Components/Navbar/NavAdmin";
-import ScrollToTop from "react-scroll-to-top";
 
 
 function Faq() {
@@ -29,45 +28,49 @@ function Faq() {
   const data = [
     {
       question: "Bagaimana cara mengisi saldo BishaPay?",
-      title: "Simply dummy text?",
+      title: "Pengisian saldo bishapay?",
       answer:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "Pengisian saldo bishapay bisa melalui ATM/bank trasnfer atau bisa melalui e-wallet lain yang sudah bekerja sama dengan bishapay, jadi kamu tidak usah khawatir jika saldomu habis.",
     },
     {
       question: "Apa itu BishaPay?",
-      title: "Simply dummy text?",
+      title: "Apa itu BishaPay?",
       answer:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "Bishapay merupakan aplikasi penyedia layanan loyalty program kepada user untuk memberikan kemudahan dan keuntungan dalam setiap transaksi, ada banyak hal yang bisa dilakukan lo di bishapay, yuk download.",
     },
     {
       question: "Fitur-fitur BishaPay?",
-      title: "Simply dummy text?",
+      title: "Fitur-fitur BishaPay?",
       answer:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "Tentu aja dong, di bishapay kamu bisa transfer ke semua orang tanpa batasan tanpa hambatan, transfer dimanapun kapanpun.",
     },
     {
       question: "Apa saja media sosial BishaPay",
-      title: "Simply dummy text?",
+      title: "Media sosial BishaPay?",
       answer:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "Ya, bishapay 100% gratis dan bisa kamu unduh lewat Google play store atau apps store, kamupun bisa ningkatin level loyalitas kamu pada saat sudah mengunduh dan menggunakan bishapay.",
     },
     {
       question: "Customer Service BishaPay?",
-      title: "Simply dummy text?",
+      title: "Customer Service?",
       answer:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "Kamu bisa menghubungi Customer service yang ada di laman web atau di aplikasi bisaphay, mudah kok dan pastinya cepet banget penangananya.",
     },
   ];
   
   return (
     <>
-      <ScrollToTop smooth />
-      {auth ? <NavAdmin /> : <Navbar />}
+      {
+          auth ? (
+            <NavAdmin/>
+          ) : (
+            <Navbar/>
+          )
+        }
       <div className="headerFaq">
         <h1 className="faq">FAQ</h1>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. <br></br>Lorem Ipsum has been the industry's standard
+        Pertanyaan tentang BishaPay
         </p>
       </div>
 
@@ -116,6 +119,7 @@ function Faq() {
           </Col>
         </Row>
       </Container>
+
     </>
   );
 }
