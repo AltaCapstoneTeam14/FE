@@ -11,6 +11,7 @@ import NavAdmin from '../../Components/Navbar/NavAdmin'
 import UIUX from '../../Images/UIUX.jpg'
 import Mobile from '../../Images/Mobile.jpg'
 import Frontend from '../../Images/Frontend.jpg'
+import Backend from '../../Images/Backend.jpg'
 import team1 from '../../Images/team1.png'
 import Values1 from '../../Images/Values1.png'
 import Values2 from '../../Images/Values2.png'
@@ -98,16 +99,16 @@ function AboutUs() {
                     <p>MOBILE APP</p>
                 </div>
                 <div className='groupTeamImg'>
-                    <img src={team1} alt="idea"></img>
-                    <p>BACK-END</p>
-                </div>
-                <div className='groupTeamImg'>
                     <img src={Frontend} alt="idea"></img>
                     <p>FRONT-END</p>
                 </div>
                 <div className='groupTeamImg'>
+                    <img src={Backend} alt="idea"></img>
+                    <p>BACK-END</p>
+                </div>
+                <div className='groupTeamImg'>
                     <img src={team1} alt="idea"></img>
-                    <p>Quality engineers</p>
+                    <p>Quality Engineers</p>
                 </div>
                 </div>
             </div>
