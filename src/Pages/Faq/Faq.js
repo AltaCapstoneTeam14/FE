@@ -7,6 +7,7 @@ import FaqImg from "../../Images/FaqImg.png";
 import Navbar from "../../Components/Navbar/Navbar";
 import authService from "../../Services/auth-services";
 import NavAdmin from "../../Components/Navbar/NavAdmin";
+import ScrollToTop from "react-scroll-to-top";
 
 
 function Faq() {
@@ -60,13 +61,8 @@ function Faq() {
   
   return (
     <>
-      {
-          auth ? (
-            <NavAdmin/>
-          ) : (
-            <Navbar/>
-          )
-        }
+      <ScrollToTop smooth />
+      {auth ? <NavAdmin /> : <Navbar />}
       <div className="headerFaq">
         <h1 className="faq">FAQ</h1>
         <p>
@@ -120,7 +116,6 @@ function Faq() {
           </Col>
         </Row>
       </Container>
-
     </>
   );
 }
