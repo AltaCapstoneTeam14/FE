@@ -1,2 +1,2 @@
-/api/* http://44.201.153.46:8081/api-dev/:splat 200
+/api/* http://44.201.153.46:8081/api/:splat 200
 /*    /index.html   200
