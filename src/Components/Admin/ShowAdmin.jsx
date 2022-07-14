@@ -7,15 +7,27 @@ import "./ShowAdmin.css";
 import { AiFillEdit } from "react-icons/ai";
 import Scroll from "../Scroll/Scroll";
 import NavAdmin from "../Navbar/NavAdmin";
+import authHeader from "../../Services/auth-header";
+import axios from "axios";
 
 const ShowAdmin = () => {
   const[counter, setCounter] = useState(1);
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
   const admin = useSelector(adminSelectors.selectAll);
-
+  const [pageAvailable,setPageAvailable] = useState()
   useEffect(() => {
     dispatch(getAdmin(counter));
+    async function getPage() {
+      try {
+        const response = await axios.get(`http://44.201.153.46:8081/api/v1/admin/users?page=${counter}&size=5`,
+        { headers: authHeader() });
+        setPageAvailable(response.data.data.page_available)
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getPage()
   }, [counter,dispatch]);
 
   const previous = () => {
@@ -23,7 +35,7 @@ const ShowAdmin = () => {
   };
 
   const next = () => {
-    setCounter(counter >= 11 ? 11 : counter + 1);
+    setCounter(counter >= 11 ? pageAvailable : counter + 1);
   };
 
   return (
@@ -103,7 +115,7 @@ const ShowAdmin = () => {
           >
             Previous
           </Button>
-          <p className="text-page">{counter}/11</p>
+          <p className="text-page">{counter}/{pageAvailable}</p>
           <Button
             variant="success"
             style={{ marginLeft: "2rem" }}

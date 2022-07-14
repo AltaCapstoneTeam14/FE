@@ -12,8 +12,6 @@ export const getAdmin = createAsyncThunk("admin/getAdmin", async (pages) => {
     `http://44.201.153.46:8081/api/v1/admin/users?page=${pages}&size=5`,
     { headers: authHeader() }
   );
-  console.log(response)
-  
   return response.data.data.users;
 });
 

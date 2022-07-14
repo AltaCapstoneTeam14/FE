@@ -30,12 +30,22 @@ function ReadMore({children = 100}) {
       setIsShowLess((!isShow));
   }
 
+  const redirect = () => {
+    window.location.href = 'http://youtube.com';
+  }
+
   return(
-      <p>
+      <p >
           {result}
-          <Button className={style.button} onClick={toggleIsShow}>
-          {isShow ? "Read More  >" : "Read Less <"}
-          </Button>
+          <div className="d-flex flex-row">
+            <Button className={style.button} onClick={toggleIsShow}>
+            {isShow ? "Read More  >" : "Read Less <"}
+            </Button>
+            <Button className={style.buttondownload} onClick={redirect}>
+              Download Here
+            </Button>
+          </div>
+          
       </p>
   )
 

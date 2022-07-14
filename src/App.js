@@ -63,6 +63,10 @@ function App() {
               </>
             }
           />
+          <Route path='/download' component={() => { 
+              window.location.href = 'www.google.com'; 
+              return null;
+          }}/>
 
           <Route element={<PrivateRoute />}>
             <Route path="/TopUpPage" element={<TopUpPage />}></Route>

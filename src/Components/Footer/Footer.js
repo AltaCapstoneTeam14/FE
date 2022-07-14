@@ -40,7 +40,7 @@ function Footer() {
             <Col className="contentFooter">
               <h6>About Us </h6>
               <p>About Bishapay </p>
-              <p>PAQ </p>
+              <p>FAQ </p>
               <p>Products</p>
               <p>Contact Us</p>
             </Col>
