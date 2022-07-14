@@ -18,7 +18,7 @@ export const saveTopUp = createAsyncThunk("topUps/saveTopUp", async ({ name, amo
 
 
 export const updateTopUp = createAsyncThunk("topUps/updateTopUp", async ({ id, name, amount, gross_amount }) => {
-  const response = await axios.put(`h/api/v1/products/topup/${id}`, {
+  const response = await axios.put(`/api/v1/products/topup/${id}`, {
       name,
       amount,
       gross_amount

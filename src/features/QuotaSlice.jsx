@@ -32,7 +32,7 @@ export const updateQuota = createAsyncThunk("quota/updateQuota", async ({ id, na
 });
 
 export const deleteQuota = createAsyncThunk("quota/deleteQuota", async (id) => {
-    await axios.delete(`h/api/v1/products/quota/${id}` , { headers: authHeader()}) ;
+    await axios.delete(`/api/v1/products/quota/${id}` , { headers: authHeader()}) ;
     return id;
 
 });
