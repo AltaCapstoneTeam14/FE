@@ -8,6 +8,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import authService from "../../Services/auth-services";
 import NavAdmin from "../../Components/Navbar/NavAdmin";
 import Scroll from "../../Components/Scroll/Scroll";
+import Footer from "../../Components/Footer/Footer"
 
 function Faq() {
   const [selected, setSelected] = useState(null);
@@ -60,6 +61,7 @@ function Faq() {
   
   return (
     <>
+    <div>
     <Scroll />
       {
           auth ? (
@@ -120,7 +122,8 @@ function Faq() {
           </Col>
         </Row>
       </Container>
-
+    </div>
+    <Footer />
     </>
   );
 }
