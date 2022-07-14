@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 import "./ShowTopUp.css"
 import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin5Fill } from "react-icons/ri";
-
+import Scroll from "../Scroll/Scroll"
 import NavAdmin from '../Navbar/NavAdmin'
 
 const ShowTopUp = () => {
@@ -26,6 +26,7 @@ const ShowTopUp = () => {
       <div>
         <NavAdmin />
       </div>
+      <Scroll />
       <div className="container">
         <div className="titleTop">
           <h2>Top Up Product</h2>

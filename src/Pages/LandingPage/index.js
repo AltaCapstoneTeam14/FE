@@ -1,6 +1,6 @@
 import style from "./style.module.css";
 import { Container, Button, Row, Col, Card, CardGroup } from "react-bootstrap";
-import React from "react";
+import React, { useState } from "react";
 
 // images
 import image1 from "../../Images/images-1.png";
@@ -10,10 +10,8 @@ import wallet from "../../Images/Crypto Wallet.svg";
 import coins from "../../Images/Coins three.svg";
 import walletCard from "../../Images/Wallet Cards.svg";
 import computer from "../../Images/computer.png";
-import purpleShadow from "../../Images/Ellipse 12.png";
 // icons
 import { GoPrimitiveDot } from "react-icons/go";
-import { BsChevronRight } from "react-icons/bs";
 
 // components
 import Footer from "../../Components/Footer/Footer"
@@ -21,7 +19,29 @@ import Navbar from "../../Components/Navbar/Navbar";
 import NavAdmin from "../../Components/Navbar/NavAdmin";
 import authService from "../../Services/auth-services";
 
-function LandingPage() { 
+function ReadMore({children = 100}) {
+
+  const text = children;
+
+  const [isShow, setIsShowLess] = useState(true)
+  const result = isShow ? text.slice(0, 100) : text;
+
+  function toggleIsShow() {
+      setIsShowLess((!isShow));
+  }
+
+  return(
+      <p>
+          {result}
+          <Button className={style.button} onClick={toggleIsShow}>
+          {isShow ? "Read More  >" : "Read Less <"}
+          </Button>
+      </p>
+  )
+
+}
+
+const LandingPage = () => { 
   const user = authService.getCurrentUser();
     let auth = false
     if (user) {
@@ -42,15 +62,11 @@ function LandingPage() {
                 Start a Loyalty Program, <span>Rewards</span> Your Business!
               </h1>
               <div className={style.paragraphTitle}>
-              <p>
-                Our loyalty solutions is ideal for many types of business <br />{" "}
-                and easy to use for you and your customers.
-              </p>
+              <ReadMore>
+              Bishapay is a loyalty application that is simple and easy to use. Our loyalty solutions are ideal for any type of business and easy to use for you. You will also get many benefits from the various transactions in bishapay. enjoy the convenience, enjoy the benefits
+              </ReadMore>
               </div>
               </div>
-              <Button className={style.button}>
-                Learn more <BsChevronRight />
-              </Button>
             </Col>
 
             <Col>
@@ -95,10 +111,7 @@ function LandingPage() {
               </h2>
               <div className={style.paragraphLanding2}>
               <p>
-                Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et.
-                Sunt qui esse pariatur duis deserunt mollit dolore cillum minim
-                tempor enim. Elit aute irure tempor cupidatat incididunt sint
-                deserunt ut voluptate aute id deserunt nisi.
+              We are here to facilitate transactions for your daily needs so that you can get excess profits with all the conveniences
               </p>
               </div>
               </div>
@@ -185,10 +198,7 @@ function LandingPage() {
 
             <Col className={style.columnLoyaltyPoint}>
               <h3 className={style.loyaltyPoint}> Loyalty Point <br></br><span style={{marginLeft: "0px"}}> By Bishapay </span> </h3>
-              <p className={style.teksLoyaltyPoint}>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
-                Exercitation veniam consequat sunt nostrud amet.
+              <p className={style.teksLoyaltyPoint}> There is a loyalty feature for you to save money and get lots of discounts by transacting on bishapay. enjoy the convenience, enjoy the benefits.
               </p>
             </Col>
           </Row>

@@ -4,13 +4,14 @@ import "../Footer/Footer.css";
 import twitter from "../../Images/Twitter.png";
 import facebook from "../../Images/Facebook.png";
 import instagram from "../../Images/Instagram.png";
-import ScrollToTop from "react-scroll-to-top";
+import Scroll from "../Scroll/Scroll";
+
 
 function Footer() {
   return (
     <>
+    <Scroll />
       <div className="footer">
-        <ScrollToTop smooth />
         <Container>
           <Row>
             <Col sm={4} className="contentFooter">

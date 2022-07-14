@@ -8,6 +8,7 @@ import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import NavAdmin from '../Navbar/NavAdmin'
 import jwtDecode from 'jwt-decode';
+import Scroll from "../Scroll/Scroll"
 
 const ShowCashOut = () => {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ const ShowCashOut = () => {
       <div>
       <NavAdmin/>
       </div>
+      <Scroll />
       <div className='titleTop'>
         <h2>Cashout Product</h2>
       </div>

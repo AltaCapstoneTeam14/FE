@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 import "./ShowSubscribe.css"
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import NavAdmin from '../Navbar/NavAdmin'
+import Scroll from "../Scroll/Scroll"
 
 const ShowSubscribe = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const ShowSubscribe = () => {
       <div>
       <NavAdmin/>
       </div>
+      <Scroll />
       <div className='titleTop'>
         <h2>Subscribe</h2>
       </div>
