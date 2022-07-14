@@ -7,11 +7,13 @@ import axios from "axios";
 import authHeader from "../Services/auth-header";
 
 
-export const getAdmin = createAsyncThunk("admin/getAdmin", async () => {
+export const getAdmin = createAsyncThunk("admin/getAdmin", async (pages) => {
   const response = await axios.get(
-    "http://44.201.153.46:8081/api/v1/admin/users?page=5&size=2",
+    `http://44.201.153.46:8081/api/v1/admin/users?page=${pages}&size=5`,
     { headers: authHeader() }
   );
+  console.log(response)
+  
   return response.data.data.users;
 });
 

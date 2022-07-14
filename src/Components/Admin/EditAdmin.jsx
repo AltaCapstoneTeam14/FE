@@ -35,7 +35,7 @@ const EditAdmin = () => {
   const handleUpdated = (e) => {
     e.preventDefault();
     dispatch(updateAdmin({id, name, balance, phone, coin }));
-    navigate('/Admin');
+    navigate('/User');
   }
 
   return (

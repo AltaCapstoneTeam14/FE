@@ -84,8 +84,8 @@ function App() {
               element={<EditCashOut />}
             ></Route>
 
-            <Route path="/Admin" element={<AdminPage />}></Route>
-            <Route path="/Admin/edit/:id" element={<EditAdmin />}></Route>
+            <Route path="/User" element={<AdminPage />}></Route>
+            <Route path="/User/edit/:id" element={<EditAdmin />}></Route>
 
             <Route path="/SubscribePage" element={<SubscribePage />}></Route>
 

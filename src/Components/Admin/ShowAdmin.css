@@ -76,3 +76,13 @@ tr:nth-child(even){
     margin-top: 50px;
     margin-bottom: 30px;
 }
+.pagination {
+    margin-left: 26rem;
+    margin-top: -3rem;
+}
+.text-page {
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+}
