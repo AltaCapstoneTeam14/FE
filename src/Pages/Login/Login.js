@@ -116,7 +116,7 @@ function Login() {
                   <div className='d-flex flex-row justify-content-between align-items-center'>
                     <Form.Label >E-mail</Form.Label>
                   </div>
-                  <Form.Control type="text" placeholder='Type your e-mail or phone number' className='border-0 mb-4' name = "email" value={Login.email} onChange={handleChange}/>
+                  <Form.Control type="text" placeholder='Type your e-mail' className='border-0 mb-4' name = "email" value={Login.email} onChange={handleChange}/>
 
                   <Form.Label >Password</Form.Label>
                   
