@@ -20,7 +20,7 @@ const ShowAdmin = () => {
     dispatch(getAdmin(counter));
     async function getPage() {
       try {
-        const response = await axios.get(`http://44.201.153.46:8081/api/v1/admin/users?page=${counter}&size=5`,
+        const response = await axios.get(`http://44.203.0.77/api/v1/admin/users?page=${counter}&size=5`,
         { headers: authHeader() });
         setPageAvailable(response.data.data.page_available)
       } catch (error) {
