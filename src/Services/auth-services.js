@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://44.203.0.77/api/v1/auth";
+const API_URL = "/api/v1/auth";
 
 
 const login = (email, password) => {

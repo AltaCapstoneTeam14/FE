@@ -9,7 +9,7 @@ import authHeader from "../Services/auth-header";
 
 export const getAdmin = createAsyncThunk("admin/getAdmin", async (pages) => {
   const response = await axios.get(
-    `http://44.203.0.77/api/v1/admin/users?page=${pages}&size=5`,
+    `/api/v1/admin/users?page=${pages}&size=5`,
     { headers: authHeader() }
   );
   return response.data.data.users;
@@ -22,7 +22,7 @@ export const updateAdmin = createAsyncThunk(
   async ({ id, name, phone, balance, coin }) => {
    
     const response = await axios.put(
-      `http://44.203.0.77/api/v1/admin/users/${id}`,
+      `/api/v1/admin/users/${id}`,
       {
         name,
         phone,

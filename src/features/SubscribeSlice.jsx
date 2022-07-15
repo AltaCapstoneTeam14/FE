@@ -3,19 +3,19 @@ import axios from "axios";
 import authHeader from "../Services/auth-header";
 
 export const getSubscribe = createAsyncThunk("subscribe/getSubscribe", async() => {
-    const response = await axios.get('http://44.203.0.77/api/v1/subscribers', { headers: authHeader() });
+    const response = await axios.get('/api/v1/subscribers', { headers: authHeader() });
     return response.data.data;
 });
 
 export const saveSubscribe = createAsyncThunk("subscribe/saveSubscribe", async ({ email }) => {
-  const response = await axios.post('http://44.203.0.77/api/v1/subscribers', {
+  const response = await axios.post('/api/v1/subscribers', {
     email
   },{ headers: authHeader() });
   return response.data.data;
 });
 
 export const deleteSubscribe = createAsyncThunk("subscribe/deleteSubscribe", async (email) => {
-    await axios.delete(`http://44.203.0.77/api/v1/subscribers/${email}` , { headers: authHeader()}) ;
+    await axios.delete(`/api/v1/subscribers/${email}` , { headers: authHeader()}) ;
     return email;
 
 });
