@@ -31,7 +31,7 @@ function ReadMore({children = 100}) {
   }
 
   const redirect = () => {
-    window.location.href = 'http://youtube.com';
+    window.location.href = 'https://drive.google.com/u/1/uc?id=1_HOTIFqsAAMUwPUaRnR0d0oVgzdkMJZj&export=download';
   }
 
   return(

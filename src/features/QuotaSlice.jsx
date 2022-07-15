@@ -3,12 +3,12 @@ import axios from "axios";
 import authHeader from "../Services/auth-header";
 
 export const getQuotas = createAsyncThunk("quota/getQuotas", async() => {
-    const response = await axios.get('http://44.201.153.46:8081/api/v1/products/quota', { headers: authHeader() });
+    const response = await axios.get('http://44.203.0.77/api/v1/products/quota', { headers: authHeader() });
     return response.data.data;
 });
 
 export const saveQuota = createAsyncThunk("quota/saveQuota", async ({ name, description, stock, provider_id, gross_amount, provider_name}) => {
-  const response = await axios.post('http://44.201.153.46:8081/api/v1/products/quota', {
+  const response = await axios.post('http://44.203.0.77/api/v1/products/quota', {
       name,
       description,
       stock,
@@ -20,7 +20,7 @@ export const saveQuota = createAsyncThunk("quota/saveQuota", async ({ name, desc
 });
 
 export const updateQuota = createAsyncThunk("quota/updateQuota", async ({ id, name, description, stock, provider_id, gross_amount, provider_name }) => {
-  const response = await axios.put(`http://44.201.153.46:8081/api/v1/products/quota/${id}`, {
+  const response = await axios.put(`http://44.203.0.77/api/v1/products/quota/${id}`, {
       name,
       description,
       stock,
@@ -32,7 +32,7 @@ export const updateQuota = createAsyncThunk("quota/updateQuota", async ({ id, na
 });
 
 export const deleteQuota = createAsyncThunk("quota/deleteQuota", async (id) => {
-    await axios.delete(`http://44.201.153.46:8081/api/v1/products/quota/${id}` , { headers: authHeader()}) ;
+    await axios.delete(`http://44.203.0.77/api/v1/products/quota/${id}` , { headers: authHeader()}) ;
     return id;
 
 });
